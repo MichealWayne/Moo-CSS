@@ -22,44 +22,64 @@ Moo-CSS的模块化主要体现在样式分类的模块化以及样式层级的�
 ## 1.1 样式分类
 根据样式属性的特征，将样式分类为以下模块：
 - **reset**：重置。重置浏览器默认样式；
-- **grid**：布局。margin，position等布局位置相关样式；
+- **grid**：布局。布局位置相关样式。包含样式属性：margin, position, line-height等
 - **module**：模块。业务模块，头、导航、菜单、列表等等；
-- **function**：功能。溢出隐藏等功能性样式；
-- **unit**：单元。宽高，padding等影响块或元素的常用单元样式；
+- **function**：功能。溢出隐藏等功能性样式；包含样式属性：clear, text-align, overflow, font-style, font-weight, font-family, vertical-align, white-space, text-decoration, text-indent等；
+- **unit**：单元。宽高，padding等影响块或元素的常用单元样式；包含样式属性：width, height, padding, display, border, flex
 - **component**：组件。图标，蒙层等常用轻量样式组件；
-- **status**：状态。透明度，是否隐藏，层级等显示状态样式；
-- **skin**：皮肤。主题颜色背景色等；
-- **animation**：动画。过渡和动画
+- **status**：状态。透明度，是否隐藏，层级等显示状态样式。也是唯一可设置!important的部分；包含样式属性：visibility, opacity, z-index, transform等；
+- **skin**：皮肤。主题颜色背景色等；包含样式属性：color, background-color, box-shadow等；
+- **animation**：动画。过渡和动画。包含样式属性：animtaion, transition。
+
+另外两种特殊模块：
 - **JavaScript DOM**：DOM操作。供js操作DOM节点，**不作样式使用**
 - **React/Vue/Angular sepcial**：框架独有。供专有框架使用，如过渡动画。
 
+**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。**
+
 ## 1.2 层级分类
-- Base：基础层，包含样式重置reset，极常出现的布局及单样式，展示状态；
-- Component：组件层，高频率出现的简单组件样式，如按钮、蒙层。可依赖于基础层，不考虑继承的组件不依赖于基础层；
-- Skin：皮肤层，业务中常出现的颜色，通常为预处理的变量。常供应于组件层和模块层；
-- Module：模块层，根据业务划分的模块，依赖于上面几个模块
-- Layout: 结构层，安排模块层布局，构成最终页面。
+- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。通常所有页面共用且不做修改。
+- **Component**：组件层，包含样式组件和方法组件，简单组件样式，如按钮、蒙层；方法组件包括动画方法和预处理方法如rem单位设置、背景图片设置。可依赖于Base层和Skin层。
+- **Skin**：皮肤层，业务中常出现的颜色，背景色，且提供预处理的颜色变量。常供应于Component层和Module层；
+- **Module**：模块层，根据业务划分的模块，依赖于上面几个模块；
+- **Layout**: 结构层，提供Module层布局样式，构成最终页面。
 
-组件层可直接嵌入页面，或通过样式容器（由基础层、皮肤层）包装组件嵌入页面，或通过模块层包装组件嵌入页面。
 
-那么上述的样式在这几层里如何归类呢？
+![moocss](//blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
 
-单页面：
+那么1.1的样式在这几层里如何归类呢？
+
+单页面（不考虑后续项目使用，较少）：
 - Base：reset、unit、function、status
-- Component：component class，animation
-- Skin：theme class，theme attribute
+- Component：component，animation
+- Skin：skin
 - Module：module
 - Layout: grid
 
 多页面：
-- Base：reset、unit（高频率共用）、function（高频率共用）、status、component（高频率共用）、theme（高频率共用），theme attribute（高频率共用）、grid（高频率共用）
-- Component：component（页面独有），animation
-- Skin：theme class，theme attribute
-- Module Common：module class，多页面公共模块
-- Module Private：module class，页面私有模块
+- Base：reset、unit（高权重）、function（高权重）、status（高权重）、component（高权重）、theme（高权重），theme attribute（高权重）、grid（高权重）
+- Component：component，animation
+- Skin：skin
 - Layout: grid
+- Module：页面私有module、component
 
-其中Base的样式，其内容语句不建议超过5句。Component的层级不建议超过2层。
+> *其中Base的样式，其样式属性不建议超过5个标签；Component的选择器层级不建议超过2层，Module的选择器层级不建议超过4层。
+
+移动端base层可参考less/mobile目录。
+
+### 1.3 样式权重计算
+公式
+```
+	1 / （样式资源量 / 样式属性耦合度 * 0.4 + 0.3 / 样式使用率 ^ 2 + 选择器权重 * 0.3）
+```
+
+数值越大权重越高，高权重可归入Base层。
+
+
+> 其中，样式资源量可由样式代码量和引入资源大小进行衡量；样式属性耦合度是指在多样式属性的样式中，属性直接的耦合度，如溢出省略'...'样的耦合度就非常高，单属性为1；样式使用率主要考虑多页面（路由）的样式使用率；选择器权重计算值越小越好。**权重公式仅做参考**
+
+
+
 
 ## 2 OO（面向对象）
 在Moo-CSS的概念里，CSS“对象”是一个可重复的视图。
@@ -79,14 +99,29 @@ CSS“对象”由以下四部分组成：
 #### 2.1.2 区分容器和内容
 区分容器和内容意味着将很少使用位置相关的样式，一个CSS“对象”应该不管放到哪里看起来都一样。所以不要用`.myObject h2{ ... }`来设置特定的`<h2>`样式，而是应该创建并应用一个描述与`<h2>`相关的class，如`<h2 class="category">`。
 
-### 2.2 三个建议
-#### 2.2.1 提取可继承的共性样式在父类中
+总得来说，就是满足SRP（单一职责）、OCP（开放封闭）
 
-#### 2.2.2 扩展样式尽可能在要拓展样式的元素本身添加class而不是它的父类
+### 2.2 OO特征
 
-#### 2.2.3 减少在对象中写位置相关的样式
+#### 2.2.1 封装
+按1.1中样式模块分类封装，保持模块之间的独立性
 
-#### 2.2.4 尽量保证选择器权重相同
+#### 2.2.2 继承
+Component层可由页面Module层进行样式继承和拓展
+
+#### 2.2.3 多态
+Base层样式可拼接成多种模块容器，这些模块容易包含原有的样式多态性。
+
+
+### 2.3 三个建议
+#### 2.3.1 提取可继承的共性样式在父类中
+
+#### 2.3.2 扩展样式尽可能在要拓展样式的元素本身添加class而不是它的父类
+
+#### 2.3.3 减少在对象中写位置相关的样式
+
+#### 2.3.4 尽量保证选择器权重相同
+
 
 ## 3 命名
 类名或属性名由小写字母，`_`、`-`符号组成
@@ -155,11 +190,34 @@ Element，依赖于块的元素，是用来标识一个元素的关键字也是�
 	</section>
 ```
 
+``` css
+	/* layout */
+	.g-pr { position: relative; }
+	.g-pa { position: absolute; }
+	
+	/* function */
+	.f-tc { text-align: center; }
+	
+	/* unit */
+	[u-size="big"] { width: 500px; font-size: 30px }
+	[u-size="small"] { width: 50px; font-size: 10px }
+	
+	/* skin */
+	[s-bgc_yellow] { background-color: yellow }
+	
+	/* module */
+	.m-nav { /*...*/ }
+	.m-nav__item { /*...*/ }
+```
 
-## 样式权重计算
-```
-	（样式复杂度 + 样式属性量）* 项目使用次数 / （完全重复次数 * 样式选择器层级数）
-```
+## 4 其他
+
+### 4.1 主流前端框架中的Component和Module
+在使用主流前端框架，如Vue，Module层可根据在路由views文件中各自定义；Component可在组件component中定义，易于区分和维护。可参考demo中mobileNavs.html。
+
+### 4.2 关于预处理的mixins和skins
+mixins和skins通常在项目样式Base层，由于预处理定义的方法跟变量不会影响生成后的css体积，因此原则上是越精细越好。
+
 
 ----------
 

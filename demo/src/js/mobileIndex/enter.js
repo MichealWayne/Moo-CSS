@@ -3,7 +3,7 @@
  */
 
 import '~/less/mobile/base.less'
-import 'less/mobile.less';
+import 'less/mobileIndex.less';
 
 
 $(() => {
