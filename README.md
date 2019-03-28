@@ -9,7 +9,8 @@ Moo-CSS
 └─demo    使用案例
 ```
 
-demo url: http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html。 建议调成手机模式在开发者模式中查看。
+demo url: http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html
+ 建议调成手机模式在开发者模式中查看。
 
 ----------
 
