@@ -36,7 +36,7 @@ Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层�
 - **JavaScript DOM**：DOM操作。供js操作DOM节点，**不作样式使用**
 - **React/Vue/Angular sepcial**：框架独有。供专有框架使用，如过渡动画。
 
-**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。**
+**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。**由属性承担一部分的样式，也弥补了大量类导致的问题。
 
 ## 1.2 层级分类
 一个项目中样式可分为如下层级：
@@ -160,11 +160,11 @@ Base层样式可拼接成多种模块容器，这些模块容易包含原有的�
 
 结合标志，如下
 ```
-	.u-w30per
-	.g-mt30
-	.f-blod
-	.s-bgc_red
-	[s-cr_red]
+.u-w30per
+.g-mt30
+.f-blod
+.s-bgc_red
+[s-cr_red]
 ```
 
 类名为module时，按照如下命名规则
@@ -181,40 +181,40 @@ Element，依赖于块的元素，是用来标识一个元素的关键字也是�
 
 如
 ``` html
-	<nav class="m-nav">
-		<a class="m-nav__item">nav 1</a>
-		<a class="m-nav__item">nav 2</a>
-	</nav>
+<nav class="m-nav">
+	<a class="m-nav__item">nav 1</a>
+	<a class="m-nav__item">nav 2</a>
+</nav>
 ```
 
 ### 3.2 module结合Base层、Component层、Skin层、Layout层完成整个样式，如
 ``` html
-	<section class="g-pr">
-		<nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
-			<a class="m-nav__item">nav 1</a>
-			<a class="m-nav__item nav_type_selected">nav 2</a>
-		</nav>
-	</section>
+<section class="g-pr">
+	<nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
+		<a class="m-nav__item">nav 1</a>
+		<a class="m-nav__item nav_type_selected">nav 2</a>
+	</nav>
+</section>
 ```
 
 ``` css
-	/* layout */
-	.g-pr { position: relative; }
-	.g-pa { position: absolute; }
-	
-	/* function */
-	.f-tc { text-align: center; }
-	
-	/* unit */
-	[u-size="big"] { width: 500px; font-size: 30px }
-	[u-size="small"] { width: 50px; font-size: 10px }
-	
-	/* skin */
-	[s-bgc_yellow] { background-color: yellow }
-	
-	/* module */
-	.m-nav { /*...*/ }
-	.m-nav__item { /*...*/ }
+/* layout */
+.g-pr { position: relative; }
+.g-pa { position: absolute; }
+
+/* function */
+.f-tc { text-align: center; }
+
+/* unit */
+[u-size="big"] { width: 500px; font-size: 30px }
+[u-size="small"] { width: 50px; font-size: 10px }
+
+/* skin */
+[s-bgc_yellow] { background-color: yellow }
+
+/* module */
+.m-nav { /*...*/ }
+.m-nav__item { /*...*/ }
 ```
 
 ## 4 其他
