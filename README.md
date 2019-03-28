@@ -4,7 +4,8 @@
 
 ```
 Moo-CSS
-├─less    less demo
+├─css     css Base
+├─less    less Base
 └─demo    使用案例
 ```
 
@@ -65,7 +66,7 @@ Moo-CSS的模块化主要体现在样式分类的模块化以及样式层级的�
 
 > *其中Base的样式，其样式属性不建议超过5个标签；Component的选择器层级不建议超过2层，Module的选择器层级不建议超过4层。
 
-移动端base层可参考less/mobile目录。
+Base层可参考less/css目录
 
 ### 1.3 样式权重计算
 公式
@@ -222,4 +223,4 @@ mixins和skins通常在项目样式Base层，由于预处理定义的方法跟�
 ----------
 
 ## 反馈
-michealwayne@myhexin.com
+michealwayne@163.com
