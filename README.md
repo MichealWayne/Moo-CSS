@@ -1,6 +1,6 @@
 # Moo-CSS 模块化面向对象的css写法
 
-组件化+面向对象
+核心：组件化+面向对象。
 
 ```
 Moo-CSS
@@ -18,17 +18,17 @@ Moo-CSS
 - attr：作为皮肤控制
 
 ## 1 M（模块化）
-Moo-CSS的模块化主要体现在样式分类的模块化以及样式层级的模块化。
+Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层级**的模块化。
 
 ## 1.1 样式分类
 根据样式属性的特征，将样式分类为以下模块：
 - **reset**：重置。重置浏览器默认样式；
-- **grid**：布局。布局位置相关样式。包含样式属性：margin, position, line-height等
+- **grid**：布局。布局位置相关样式。包含样式属性：margin, position, line-height等；
 - **module**：模块。业务模块，头、导航、菜单、列表等等；
 - **function**：功能。溢出隐藏等功能性样式；包含样式属性：clear, text-align, overflow, font-style, font-weight, font-family, vertical-align, white-space, text-decoration, text-indent等；
-- **unit**：单元。宽高，padding等影响块或元素的常用单元样式；包含样式属性：width, height, padding, display, border, flex
+- **unit**：单元。宽高，padding等影响块或元素的常用单元样式；包含样式属性：width, height, padding, display, border, flex等；
 - **component**：组件。图标，蒙层等常用轻量样式组件；
-- **status**：状态。透明度，是否隐藏，层级等显示状态样式。也是唯一可设置!important的部分；包含样式属性：visibility, opacity, z-index, transform等；
+- **status**：状态。透明度、是否隐藏、层级等显示状态样式（是规定唯一可设置!important的部分）；包含样式属性：visibility, opacity, z-index, transform等；
 - **skin**：皮肤。主题颜色背景色等；包含样式属性：color, background-color, box-shadow等；
 - **animation**：动画。过渡和动画。包含样式属性：animtaion, transition。
 
@@ -39,16 +39,32 @@ Moo-CSS的模块化主要体现在样式分类的模块化以及样式层级的�
 **其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。**
 
 ## 1.2 层级分类
-- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。通常所有页面共用且不做修改。
+一个项目中样式可分为如下层级：
+- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。**通常所有页面共用且不做修改**。
 - **Component**：组件层，包含样式组件和方法组件，简单组件样式，如按钮、蒙层；方法组件包括动画方法和预处理方法如rem单位设置、背景图片设置。可依赖于Base层和Skin层。
 - **Skin**：皮肤层，业务中常出现的颜色，背景色，且提供预处理的颜色变量。常供应于Component层和Module层；
 - **Module**：模块层，根据业务划分的模块，依赖于上面几个模块；
 - **Layout**: 结构层，提供Module层布局样式，构成最终页面。
 
 
-![moocss](//blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
+![moocss](https://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
+
+也就是说，页面是由Base、Component、Skin、Layout这四个层级辅助Module层完成样式开发。
 
 那么1.1的样式在这几层里如何归类呢？
+
+
+多页面：
+- Base：reset、unit（高权重）、function（高权重）、status（高权重）、component（高权重）、theme（高权重），theme attribute（高权重）、grid（高权重）
+- Component：component，animation、function
+- Skin：skin
+- Layout: grid
+- Module：页面私有module、component
+
+> *其中Base的样式，其样式属性不建议超过5个标签；Component的选择器层级不建议超过2层，Module的选择器层级不建议超过4层。
+
+Base层可参考less/css目录
+
 
 单页面（不考虑后续项目使用，较少）：
 - Base：reset、unit、function、status
@@ -57,16 +73,6 @@ Moo-CSS的模块化主要体现在样式分类的模块化以及样式层级的�
 - Module：module
 - Layout: grid
 
-多页面：
-- Base：reset、unit（高权重）、function（高权重）、status（高权重）、component（高权重）、theme（高权重），theme attribute（高权重）、grid（高权重）
-- Component：component，animation
-- Skin：skin
-- Layout: grid
-- Module：页面私有module、component
-
-> *其中Base的样式，其样式属性不建议超过5个标签；Component的选择器层级不建议超过2层，Module的选择器层级不建议超过4层。
-
-Base层可参考less/css目录
 
 ### 1.3 样式权重计算
 公式
