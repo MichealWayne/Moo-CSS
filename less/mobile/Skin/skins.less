@@ -1,0 +1,73 @@
+/*
+* Mobile
+* skins
+*/
+@import url('./colors.less');
+
+// font color
+[s-cr_red]{
+    color: @red;
+}
+[s-cr_green]{
+    color: @green;
+}
+[s-cr_blue]{
+    color: @blue;
+}
+[s-ft_base]{
+    color: @font-base;
+}
+[s-ft_base_]{
+    color: @font-base_;
+}
+[s-ft_sub]{
+    color: @font-sub;
+}
+[s-ft_sub_], 
+[s-cr_gray]{
+    color: @font-sub_;
+}
+[s-cr_white] {
+    color: @white;
+}
+
+// background color
+[s-bgc_red] {
+    background-color: @red;
+}
+[s-bgc_green] {
+    background-color: @green;
+}
+[s-bgc_blue]{
+    background-color: @blue;
+}
+[s-bgc_gray]{
+    background-color: @font-sub_;
+}
+
+.s-btn {
+    &[s-color="yellow"] {
+        background-color: @button-yellow;
+        color: @white;
+    }
+    &[s-color="orange"] {
+        background-color: @button-orange;
+        color: @white;
+    }
+    &[s-color="red"] {
+        background-color: @button-red;
+        color: @white;
+    }
+    &[s-color="gray"] {
+        background-color: @button-gray;
+        color: @white;
+    }
+    &[s-color="bd_gray"] {
+        border: thin solid @font-sub_;
+        color: @font-sub_;
+    }
+    &[s-color="bd_white"] {
+        border: thin solid @white;
+        color: @white;
+    }
+}
