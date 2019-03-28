@@ -9,6 +9,8 @@ Moo-CSS
 └─demo    使用案例
 ```
 
+demo url: http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html，建议调成手机模式在开发者模式中查看。
+
 ----------
 
 ## 基本规范
@@ -36,7 +38,7 @@ Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层�
 - **JavaScript DOM**：DOM操作。供js操作DOM节点，**不作样式使用**
 - **React/Vue/Angular sepcial**：框架独有。供专有框架使用，如过渡动画。
 
-**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。**由属性承担一部分的样式，也弥补了大量类导致的问题。
+**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现**。由属性承担一部分的样式，也弥补了大量类导致的问题。
 
 ## 1.2 层级分类
 一个项目中样式可分为如下层级：

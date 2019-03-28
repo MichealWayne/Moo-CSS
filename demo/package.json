@@ -1,9 +1,9 @@
 {
-  "name": "WebpackDemo",
+  "name": "MoocssDemo",
   "version": "1.0.0",
-  "task": "fs-test",
-  "author": "WebpackDemo",
-  "description": "a typical webpack config project.contain less, babel, eslint.",
+  "task": "test",
+  "author": "MichealWayne",
+  "description": "a typical Moo-css demo.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --hot --env.dev",
