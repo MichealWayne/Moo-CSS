@@ -1,7 +1,14 @@
 # Moo-CSS 模块化面向对象的css写法
 
-核心：组件化+面向对象。
-
+- 核心：组件化+面向对象。
+- 优点：
+	- 重用性强
+	- 维护性强
+	- 拓展性强
+- 缺点：
+	- 上手成本~
+	
+	
 ```
 Moo-CSS
 ├─css     css Base
@@ -190,7 +197,10 @@ Element，依赖于块的元素，是用来标识一个元素的关键字也是�
 </nav>
 ```
 
-### 3.2 module结合Base层、Component层、Skin层、Layout层完成整个样式，如
+### 3.2 module结合Base层、Component层、Skin层、Layout层完成整个样式，
+类class的顺序为：**module Base Component(function) Skin Layout**。
+
+如
 ``` html
 <section class="g-pr">
 	<nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
