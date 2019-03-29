@@ -20,12 +20,12 @@
                     <em class="u-icon u-menu j-open_menu" f-bg_cover></em>
                     <div class="m-menu__ctn g-menu__ctn a-trans_color" s-bg_theme>
                         <em class="u-icon u-menu g-mt20 j-close_menu" f-bg_cover></em>
-                        <div class="u-avatar u-c-middle g-mt30">
+                        <div class="u-avatar u-c-middle g-mt30 j-to_home">
                             <img src="images/avatar.jpg">
                             <span class="g-fs32 g-ml10">Micheal Wayne</span>
                         </div>
                         <ul>
-                            <li class="m-menu__item">
+                            <li class="m-menu__item j-to_home">
                                 <em class="u-icon" u-icon_sprite icon-star></em>
                                 <span>我的主页</span>
                             </li>
@@ -42,10 +42,10 @@
                 <section class="u-nav j-to_nav" f-bg_cover></section>
             </div>
             <div class="m-head__logo f-tc g-mt10">
-                <img class="u-logo" src="images/avatar.jpg">
+                <img class="u-logo j-to_home" src="images/avatar.jpg">
             </div>
             <div class="m-search u-j-middle">
-                <input id="search" class="m-search__input g-fs34" type="text" name="search"/>
+                <input id="search" class="m-search__input g-fs34" type="text" name="search" placeholder="输入搜索内容" />
                 <button class="u-btn m-search__btn j-jump" s-color="red" no-bdr>搜索</button>
             </div>
         </header>
@@ -57,20 +57,20 @@
         <article class="m-articles u-pl4per u-pr4per g-mt30">
             <h3 class="m-articles__tit g-fs36 f-normal">列表</h3>
             <section class="m-article">
-                <div class="m-article__h1">Moo-css 概要</div>
-                <div class="m-article__foot">Micheal Wayne</div>
+                <div class="m-article__h1 u-w f-ellipsis">Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层级**的模块化。</div>
+                <div class="m-article__foot">Micheal Wayne Moo-css</div>
             </section>
             <section class="m-article">
-                <div class="m-article__h1">Moo-css 概要</div>
+                <div class="m-article__h1">CSS“对象”是一个可重复的视图</div>
                 <div class="u-j-middle m-article__3pic g-mb20">
+                    <img src="images/p-3.jpg">
                     <img src="images/p-1.jpg">
                     <img src="images/p-2.jpg">
-                    <img src="images/p-3.jpg">
                 </div>
                 <div class="m-article__foot">Micheal Wayne</div>
             </section>
             <section class="m-article">
-                <div class="m-article__h1">Moo-css 概要</div>
+                <div class="m-article__h1">分离结构和皮肤</div>
                 <div class="m-article__1pic g-mb20">
                     <img src="images/p-3.jpg">
                 </div>
@@ -81,8 +81,8 @@
                     <img src="images/p-3.jpg">
                 </div>
                 <div class="m-article__right">
-                    <div class="m-article__h1">Moo-css 概要</div>
-                    <div class="m-article__foot">Micheal Wayne</div>
+                    <div class="m-article__h1">区分容器和内容</div>
+                    <div class="m-article__foot">区分容器和内容意味着将很少使用位置相关的样式，一个CSS“对象”应该不管放到哪里看起来都一样。</div>
                 </div>
             </section>
         </article>

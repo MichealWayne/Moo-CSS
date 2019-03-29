@@ -210,7 +210,7 @@ module.exports = (options = {}) => {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            publicPath: '/assets/font/',
+                            publicPath: '../assets/font/',
                             outputPath: 'assets/font/'
                         }
                     }]

@@ -10,31 +10,31 @@
             <div class="m-cards__item">
                 <p>
                     <em class="u-iconfont icon-fish g-fs30" s-cr_red></em>
-                    <strong class="m-ri_tit f-bold g-fs28">中信百信银行</strong>
+                    <strong class="m-ri_tit f-bold g-fs28">Moo-css</strong>
                 </p>
-                <p class="g-fs32 g-mt10">智惠存2号</p>
+                <p class="g-fs32 g-mt10">继承的特性</p>
                 <p class="m-ri_sy f-bold g-mt10" s-cr_yellow>JS</p>
-                <p class="g-fs24" s-ft_sub_>今日支取收益率</p>
+                <p class="g-fs24" s-ft_sub_>样式继承</p>
             </div>
 
             <div class="m-cards__item">
                 <p>
                     <em class="u-iconfont icon-fish g-fs30" s-cr_red></em>
-                    <strong class="m-ri_tit f-bold g-fs28">中信百信银行</strong>
+                    <strong class="m-ri_tit f-bold g-fs28">Moo-css</strong>
                 </p>
-                <p class="g-fs32 g-mt10">智惠存2号</p>
+                <p class="g-fs32 g-mt10">封装的特性</p>
                 <p class="m-ri_sy f-bold g-mt10" s-cr_yellow>JS</p>
-                <p class="g-fs24" s-ft_sub_>今日支取收益率</p>
+                <p class="g-fs24" s-ft_sub_>模块分类</p>
             </div>
 
             <div class="m-cards__item">
                 <p>
                     <em class="u-iconfont icon-fish g-fs30" s-cr_red></em>
-                    <strong class="m-ri_tit f-bold g-fs28">中信百信银行</strong>
+                    <strong class="m-ri_tit f-bold g-fs28">Moo-css</strong>
                 </p>
-                <p class="g-fs32 g-mt10">智惠存2号</p>
+                <p class="g-fs32 g-mt10">多态的特性</p>
                 <p class="m-ri_sy f-bold g-mt10" s-cr_yellow>JS</p>
-                <p class="g-fs24" s-ft_sub_>今日支取收益率</p>
+                <p class="g-fs24" s-ft_sub_>模块拼装</p>
             </div>
         </div>
 
@@ -55,8 +55,8 @@
         data () {
             return {
                 ads: {
-                    title: 'card title',
-                    content: 'card content',
+                    title: '浏览器结构',
+                    content: '用户界面+浏览器引擎+呈现引擎+网络+用户界面后端+JavaScript 解释器',
                     imgs: ['//blog.michealwayne.cn/images/notes/20181031/layers.png', '//blog.michealwayne.cn/images/notes/20181031/domtree.png', '//blog.michealwayne.cn/images/notes/20181031/htmlanalysis.png']
                 }
             }

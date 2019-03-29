@@ -37,5 +37,10 @@ $(() => {
     // search jump
     $('.j-jump').click(() => {
         location.href = 'https://www.baidu.com/s?wd=' + $search.val();
+    });
+
+    // to home page
+    $('.j-to_home').click(() => {
+        location.href = 'https://github.com/MichealWayne/Moo-CSS'
     })
 })

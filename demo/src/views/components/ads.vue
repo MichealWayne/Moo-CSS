@@ -19,8 +19,8 @@
         </section>
         <section v-else-if="type === '2'">
             <div class="u-ads__h1">{{title}}</div>
-            <div class="u-ads__ctn">{{content}}</div>
-            <div class="u-ads__imgs u-j-middle">
+            <div class="u-ads__ctn u-w f-ellipsis">{{content}}</div>
+            <div class="u-ads__imgs u-j-middle g-mt20">
                 <img :src="img" v-for="(img, index) in imgs"/>
             </div>
         </section>

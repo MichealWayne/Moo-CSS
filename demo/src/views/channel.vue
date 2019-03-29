@@ -38,8 +38,8 @@
         data () {
             return {
                 ads: {
-                    title: 'test tit',
-                    content: 'test content',
+                    title: 'Flex布局的兼容',
+                    content: '安卓4.4+，ios7+，IE10+...',
                     imgs: [ '//blog.michealwayne.cn/images/notes/20190104/compatibility.png' ]
                 }
             }

@@ -134,7 +134,7 @@ Base层样式可拼接成多种模块容器，这些模块容易包含原有的�
 
 
 ## 3 命名
-类名或属性名由小写字母，`_`、`-`符号组成
+类名或属性名由小写字母，`_`、`-`符号组成，以标志来确定样式命名空间。
 
 类或属性的写法为：
 ```
@@ -220,12 +220,132 @@ Element，依赖于块的元素，是用来标识一个元素的关键字也是�
 .m-nav__item { /*...*/ }
 ```
 
-## 4 其他
+## 4 命名词典
+module：
+```
+a - link (<a> tag)
+ac - action
+add - additional
+adv - advertise
+aft - after
+aux - auxillary
 
-### 4.1 主流前端框架中的Component和Module
+btn - button
+
+cat - catalog | category
+cnt - content | container
+cnts - contents
+col - column
+
+dec - decorate
+def - default
+del - delete
+descr - description
+dm - delim
+doc - document
+dyn - dynamic
+
+el - element
+err - error
+ext - external
+
+f - footer
+fr - friend
+
+gen - general
+
+hl - highlight
+hv - hover
+hld - holder
+
+img - image
+itx - textarea
+
+
+lbl - label
+lk - link
+lr - layer
+
+mod - module | modifier
+
+n - name
+ntf - notification
+num - number
+
+opt - options
+ovr - overlay
+
+ph - placeholder
+pht - photo
+priv - privacy
+
+rfr - refresh
+
+scr - screen | scroll
+sel - select
+sett - settings
+sm - small
+spr - sprite
+
+tit - title
+
+wrap - wrapper
+```
+
+部分属性：
+```
+b - bottom
+bd - border
+bdc - border-color
+bdr - border-radius
+bg - background
+bgc - background-color
+bgi - background-image
+bgp - background-position
+bs - box-shadow
+
+c - clear
+cr - color
+
+f - float | front
+fs - font-size
+fw - font-weight
+
+h - height
+il - inline-block
+
+lh - line-height
+m - margin
+mb - margin-bottom
+ml - margin-left
+mr - margin-right
+mt - margin-top
+
+o - opacity
+ov - overflow
+
+p - padding | position
+per - %
+pb - padding-bottom
+pl - padding-left
+pr - padding-right
+pt - padding-top
+
+t - text-align
+ti - text-indent
+
+unl - underline
+v - vertical-align | visibility
+w - width
+
+```
+
+## 5 其他
+
+### 5.1 主流前端框架中的Component和Module
 在使用主流前端框架，如Vue，Module层可根据在路由views文件中各自定义；Component可在组件component中定义，易于区分和维护。可参考demo中mobileNavs.html。
 
-### 4.2 关于预处理的mixins和skins
+### 5.2 关于预处理的mixins和skins
 mixins和skins通常在项目样式Base层，由于预处理定义的方法跟变量不会影响生成后的css体积，因此原则上是越精细越好。
 
 
