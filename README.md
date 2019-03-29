@@ -354,9 +354,56 @@ w - width
 
 ### 5.1 主流前端框架中的Component和Module
 在使用主流前端框架，如Vue，Module层可根据在路由views文件中各自定义；Component可在组件component中定义，易于区分和维护。可参考demo中mobileNavs.html。
+在使用主流前端框架，如Vue，Module层可根据在路由views中的vue文件中各自定义；Component可在组件components的vue文件中定义，易于区分和维护。
+如views/a.vue
+``` vue
+	<template>
+		<div class="m-a">...</div>
+	</template>
+	<style>
+		.m-a {}
+	</style>
+```
+
+components/b.vue
+``` vue
+	<template>
+		<div class="u-a">...</div>
+	</template>
+	<style>
+		.u-a {}
+	</style>
+```
 
 ### 5.2 关于预处理的mixins和skins
 mixins和skins通常在项目样式Base层，由于预处理定义的方法跟变量不会影响生成后的css体积，因此原则上是越精细越好。
+
+如mixins.less
+``` less
+// border-top 1px mobile
+.bdt1px(@color) {
+    position: relative
+    &:after {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 1px;
+		-webkit-transform: scale(1, 0.5);
+		transform: scale(1, 0.5);
+		background-color: @color;
+	}
+}
+```
+
+module.less
+``` less
+	@import 'mixins.less';
+	.m-nav {
+		.m-nav__item {
+			.bdt1px(red);
+		}
+	}
+```
 
 
 ----------
