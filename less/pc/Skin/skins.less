@@ -1,8 +1,9 @@
 /*
-* Mobile
+* PC
 * skins
 */
 @import url('./colors.less');
+@import url('../Component/mixins.less');
 
 // font color
 [s-cr_red]{
@@ -47,19 +48,19 @@
 
 .s-btn {
     &[s-color="yellow"] {
-        background-color: @button-yellow;
+        .bg-variant(@button-yellow);
         color: @white;
     }
     &[s-color="orange"] {
-        background-color: @button-orange;
+        .bg-variant(@button-orange);
         color: @white;
     }
     &[s-color="red"] {
-        background-color: @button-red;
+        .bg-variant(@button-red);
         color: @white;
     }
     &[s-color="gray"] {
-        background-color: @button-gray;
+        .bg-variant(@button-gray);
         color: @white;
     }
     &[s-color="bd_gray"] {

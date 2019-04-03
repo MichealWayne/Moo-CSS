@@ -4,7 +4,7 @@
 */
 @import url('./colors.less');
 
-// font color
+/* font color */
 [s-cr_red]{
     color: @red;
 }
@@ -25,13 +25,13 @@
 }
 [s-ft_sub_], 
 [s-cr_gray]{
-    color: @font-sub_;
+    color: @gray-light;
 }
 [s-cr_white] {
     color: @white;
 }
 
-// background color
+/* background color */
 [s-bgc_red] {
     background-color: @red;
 }
@@ -42,9 +42,10 @@
     background-color: @blue;
 }
 [s-bgc_gray]{
-    background-color: @font-sub_;
+    background-color: @gray-light;
 }
 
+/* button color */
 .s-btn {
     &[s-color="yellow"] {
         background-color: @button-yellow;
@@ -63,8 +64,8 @@
         color: @white;
     }
     &[s-color="bd_gray"] {
-        border: thin solid @font-sub_;
-        color: @font-sub_;
+        border: thin solid @gray-light;
+        color: @gray-light;
     }
     &[s-color="bd_white"] {
         border: thin solid @white;

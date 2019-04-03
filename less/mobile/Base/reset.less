@@ -1,4 +1,9 @@
-/*reset*/
+/**
+ * Mobile 
+ * reset
+ */
+
+@import '../Skin/colors.less';
 
 html,
 body,
@@ -47,9 +52,6 @@ menu {
     border: 0;
     outline: 0;
     -webkit-touch-callout: none;
-    -moz-touch-callout: none;
-    -ms-touch-callout: none;
-    touch-callout: none;
 }
 
 header,
@@ -131,7 +133,6 @@ input[type="reset"],
 input[type="submit"] {
     cursor: pointer;
     -webkit-appearance: button;
-    *overflow: visible
 }
 
 input[type="checkbox"],
@@ -149,4 +150,16 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none
+}
+
+a {
+    color: @font-link;
+}
+
+body{
+    font-size: 14px;
+    line-height: 1.5;
+    color: @font-base;
+    font-family: 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+    -webkit-text-size-adjust: none;
 }

@@ -8,43 +8,117 @@
 .px(@name, @px) {
     @{name}: unit(round((percentage(@px)/100/@rem), @remkeep), px);
 }
-
 // 宽高
-.wh(@width: 100%; @height) {
+.wh(@width: 100%;
+@height) {
     width: @width;
     height: @height;
 }
+.square(@size) {
+  .wh(@size; @size);
+}
 
 // 高、行高一致
-.hh(@height){
+.hh(@height) {
     height: @height;
     line-height: @height;
 }
+// 最小尺寸, 兼容IE6
+.min-width(@min-w) {
+    min-width: @min-w;
+    _width: @min-w;
+}
+.min-height(@min-h) {
+    min-height: @min-h;
+    _height: @min-h;
+}
+// 内联块级元素, 兼容IE6
+.dib() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+// 固定定位, 兼容IE6
+.fixed() {
+    position: fixed;
+    _position: absolute;
+    *zoom: 1;
+}
+// 浮动, 兼容 IE6
+.fl() {
+    float: left;
+    *display: inline;
+    _display: inline;
+}
+.fr() {
+    float: right;
+    *display: inline;
+    _display: inline;
+}
+// 清除浮动
+.clearfix() {
+    *zoom: 1;
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+        visibility: hidden;
+        height: 0;
+    }
+}
+.clearfix(table) {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
 
 // 字体大小、行高
-.font(@size; @line-height) {  
+.font(@size;
+@line-height) {
     font-size: @size;
     line-height: @line-height;
 }
-
 // 字体大小，颜色
-.sc(@size; @color){
+.sc(@size;
+@color) {
     font-size: @size;
     color: @color;
 }
+// 禁止文字选中
+.no-select () {
+  -webkit-user-select：none;
+          user-select：none;
+}
+
 
 // top、left
-.tl(@top; @left){
+.tl(@top;
+@left) {
     top: @top;
     left: @left;
 }
-
 // 背景图片地址和大小
-.bis(@url) { 
+.bis(@url) {
     background-image: url(@url);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: 0 0;
+}
+// 按钮背景颜色
+.bg-variant(@color) {
+  background-color: @color;
+  a&:hover,
+  a&:focus {
+    background-color: darken(@color, 10%);
+  }
+}
+// 模糊
+.blur (@range) {
+  -webkit-filter: blur(@range);
+          filter: blur(@range);
 }
 
 // 定位上下左右居中
@@ -52,4 +126,30 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+// 单边 border-radius
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+// opacity
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
 }

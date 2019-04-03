@@ -50,7 +50,7 @@ Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层�
 
 ## 1.2 层级分类
 一个项目中样式可分为如下层级：
-- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。**通常所有页面共用且不做修改**。
+- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。（通常所有页面共用且不做修改）。
 - **Component**：组件层，包含样式组件和方法组件，简单组件样式，如按钮、蒙层；方法组件包括动画方法和预处理方法如rem单位设置、背景图片设置。可依赖于Base层和Skin层。
 - **Skin**：皮肤层，业务中常出现的颜色，背景色，且提供预处理的颜色变量。常供应于Component层和Module层；
 - **Module**：模块层，根据业务划分的模块，依赖于上面几个模块；
@@ -357,22 +357,22 @@ w - width
 在使用主流前端框架，如Vue，Module层可根据在路由views中的vue文件中各自定义；Component可在组件components的vue文件中定义，易于区分和维护。
 如views/a.vue
 ``` vue
-	<template>
-		<div class="m-a">...</div>
-	</template>
-	<style>
-		.m-a {}
-	</style>
+<template>
+	<div class="m-a">...</div>
+</template>
+<style>
+	.m-a {}
+</style>
 ```
 
 components/b.vue
 ``` vue
-	<template>
-		<div class="u-a">...</div>
-	</template>
-	<style>
-		.u-a {}
-	</style>
+<template>
+	<div class="u-a">...</div>
+</template>
+<style>
+	.u-a {}
+</style>
 ```
 
 ### 5.2 关于预处理的mixins和skins

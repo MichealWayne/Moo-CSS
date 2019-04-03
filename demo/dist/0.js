@@ -5,7 +5,7 @@
  *   @description: a typical Moo-css demo.
  *   @author: MichealWayne
  *   @task: test
- *   @build time: 2019/03/29 14:27:34
+ *   @build time: 2019/04/03 14:46:24
  * 
  */
 (window.webpackJsonp=window.webpackJsonp||[]).push([[0],{18:function(n,w,o){}}]);

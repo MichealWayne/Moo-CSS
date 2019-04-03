@@ -9,6 +9,7 @@ import 'less/mobileIndex.less';
 $(() => {
     let $app = $('#app');
     let $mask = $('.j-mask');
+    let $tip = $('.j-tip');
     let $search = $('#search');
 
     // change theme
@@ -26,7 +27,7 @@ $(() => {
     });
     $('.j-close_menu').add($mask).on('click', () => {
         $menus.removeClass('g-menu_in');
-        $mask.addClass('z-hide');
+        $tip.add($mask).addClass('z-hide');
     });
 
     // to nav
@@ -42,5 +43,10 @@ $(() => {
     // to home page
     $('.j-to_home').click(() => {
         location.href = 'https://github.com/MichealWayne/Moo-CSS'
-    })
+    });
+
+    // show tip
+    $('.j-show_tip').click(() => {
+        $tip.add($mask).removeClass('z-hide');
+    });
 })
