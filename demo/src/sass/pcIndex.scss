@@ -1,0 +1,67 @@
+
+/**
+ * Moo-CSS PC Demo
+ */
+
+@import './component';
+@import './layout';
+@import './skin';
+
+
+.m-navbar {
+    padding: 0.7rem 1.5rem;
+    line-height: 2.2rem;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.6rem;
+    box-sizing: border-box;
+
+    .m-nav {
+        width:  260px;
+    }
+}
+
+.m-home {
+    margin: 0px auto;
+    padding: 3.6rem 2rem 0;
+    max-width: 960px;
+}
+.m-title {
+    img {
+        max-height: 280px;
+        display: block;
+        margin: 3rem auto 1.5rem;
+    }
+    .m-title__name, 
+    .m-title__description,
+    .m-title__action {
+        margin: 1.8rem auto;
+    }
+    .m-title__description {
+        max-width: 35rem;
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    .m-title__btn {
+        width: 148px;
+    }
+}
+
+.m-feature__item {
+    font-weight: normal;
+    
+    .m-feature__item {
+        p {
+            margin-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+}
+
+.m-foot {
+    padding: 40px;
+}
+

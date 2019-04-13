@@ -1,0 +1,160 @@
+/*------------------------------------*\
+    Mobile mixins
+\*------------------------------------*/
+
+$rem: 75;
+$remkeep: 4;
+/* calculate rem*/
+@function unit($size) {
+  @return $size / $rem  + rem;
+}
+
+
+/*width height*/
+@mixin wh($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+/* square */
+@mixin square($width) {
+  @include wh($width);
+}
+
+/* height = line-height */
+@mixin hh($height, $lineHeight) {
+  height: $height;
+  line-height: $lineHeight;
+}
+
+/*font-size line-height color*/
+@mixin font($size, $lineHeight, $color) {
+  font-size: $size;
+  @if ($lineHeight) {
+    line-height: $lineHeight;
+  }
+  @if ($color) {
+    color: $color;
+  }
+}
+
+/*font-size color*/
+@mixin sc($size,$color) {
+  font-size: $size;
+  color: $color;
+}
+
+/* 多行文字溢出... */
+@mixin mulit-ellipsis ($maxline) {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $maxline;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 伪类布局 */
+@mixin pseudo-class () {
+  position: relative;
+
+  &:before,
+  &:after {
+      position: absolute;
+      content: '';
+  }
+}
+
+/* 使用DIN字体 */
+@mixin font-DIN() {
+    font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+}
+
+
+/* position top、left */
+@mixin tl($top,$left) {
+  top: $top;
+  left: $left;
+}
+
+/*top right bottom left*/
+@mixin position($top,$right,$bottom,$left) {
+  top: $top;
+  @if ($right) {
+    right: $right;
+  }
+  @if ($bottom) {
+    bottom: $bottom;
+  }
+  @if ($left) {
+    left: $left;
+  }
+}
+
+/*background image*/
+@mixin bis($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+}
+
+/*center*/
+@mixin center() {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* fixed mask */
+@mixin fixed-mask () {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/* 单边 border-radius */
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+}
+
+/* 改变滚动条颜色，需要hsl颜色，如.setScroll(hsla(200, 100%, 54%, 1)); */
+@mixin set-scroll($scrollcolor) {
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 13px;
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background-color: fadeout($scrollcolor, 100%);
+        border-left: thin solid fadeout($scrollcolor, 100%);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: fadeout($scrollcolor, 80%);
+        background-clip: padding-box;
+        border-radius: 5px;
+        min-height: 20px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: fadeout($scrollcolor, 80%);
+        border-radius: 5px;
+    }
+}

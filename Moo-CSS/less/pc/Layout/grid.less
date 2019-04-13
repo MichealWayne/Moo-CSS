@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    PC grid
+\*------------------------------------*/
+
+
+@import '../Component/mixins.less';
+@import '../Base/sizes.less';
+
+/*layout*/
+.g-box_b{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.g-box_c{
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+}
+.g-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*position*/
+.g-pf {
+    position: fixed;
+}
+.g-pr {
+    position: relative;
+}
+
+.g-pa {
+    position: absolute;
+}
+
+/* calculate font-size line-height */
+
+.g-fs(@n, @i: 1) when (@i <= @n) {
+    .g-fs@{i} {
+        .px(font-size, @i);
+    }
+    .g-fs(@n, (@i + 2));
+}
+.g-fs(40, 10);      // 10px ~ 40px, in units of 2px
+
+
+.g-lh150per {
+    line-height: 1.5;
+}
+
+.g-lh180per {
+    line-height: 1.8;
+}
+
+.g-lh200per {
+    line-height: 2;
+}
+
+/* calculate margin */
+.g-m20 {
+    .px(margin, 20);
+}
+.g-m30 {
+    .px(margin, 30);
+}
+.g-m40 {
+    .px(margin, 40);
+}
+.g-m50 {
+    .px(margin, 50);
+}
+
+/* 边距 */
+.g-m(@n, @i: 10) when (@i <= @n) {
+    .g-mt@{i} {
+        .px(margin-top, @i);
+    }
+    .g-mb@{i} {
+        .px(margin-bottom, @i);
+    }
+    .g-ml@{i} {
+        .px(margin-left, @i);
+    }
+
+    .g-m(@n, (@i + 10))
+}
+
+/* margin-top, margin-left, margin-bottom: 10px ~ 200px, in units of 10px */
+.g-m(200);  

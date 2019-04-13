@@ -68,7 +68,7 @@
 </script>
 
 <style lang="less">
-    @import '../../../less/mobile/base.less';
+    @import '../../../Moo-CSS/less/mobile/base.less';
 
     .m-cards__ctn {
         padding-top: .2rem;

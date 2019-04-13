@@ -1,0 +1,180 @@
+/*------------------------------------*\
+    PC mixins
+\*------------------------------------*/
+
+
+/* calculate rem*/
+@function unit($size) {
+  @return $size  + px;
+}
+/*width height*/
+@mixin wh($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+/* square */
+@mixin square($size) {
+  @include wh($size, $size);
+}
+
+
+/*height line-height*/
+@mixin hh($height,$lineHeight) {
+  height: $height;
+  line-height: $lineHeight;
+}
+
+/* 最小尺寸, 兼容IE6 */
+@mixin min-width($min-w) {
+    min-width: $min-w;
+    _width: $min-w;
+}
+@mixin min-height($min-h) {
+    min-height: $min-h;
+    _height: $min-h;
+}
+
+/*font-size line-height color*/
+@mixin font($size, $lineHeight, $color) {
+  font-size: $size;
+  @if ($lineHeight) {
+    line-height: $lineHeight;
+  }
+  @if ($color) {
+    color: $color;
+  }
+}
+/* 内联块级元素, 兼容IE6 */
+@mixin dib() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+/* 固定定位, 兼容IE6 */
+@mixin fixed() {
+    position: fixed;
+    _position: absolute;
+    *zoom: 1;
+}
+/* 浮动, 兼容 IE6 */
+@mixin fl() {
+    float: left;
+    *display: inline;
+    _display: inline;
+}
+@mixin fr() {
+    float: right;
+    *display: inline;
+    _display: inline;
+}
+
+
+/*font-size color*/
+@mixin sc($size,$color) {
+  font-size: $size;
+  color: $color;
+}
+
+/* 清除浮动 */
+@mixin clearfix() {
+    *zoom: 1;
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+        visibility: hidden;
+        height: 0;
+    }
+}
+@mixin clearfix() {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+
+/*top left*/
+@mixin tl($top,$left) {
+  top: $top;
+  left: $left;
+}
+
+/*top right bottom left*/
+@mixin position($top,$right,$bottom,$left) {
+  top: $top;
+  @if ($right) {
+    right: $right;
+  }
+  @if ($bottom) {
+    bottom: $bottom;
+  }
+  @if ($left) {
+    left: $left;
+  }
+}
+/* 禁止文字选中 */
+@mixin no-select () {
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+/*background image*/
+@mixin bis($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+}
+
+/* 按钮背景颜色 */
+@mixin bg-variant($color) {
+  background-color: $color;
+  &:hover,
+  &:focus {
+    background-color: darken($color, 10%);
+  }
+}
+
+/* 模糊 */
+@mixin blur ($range) {
+  -webkit-filter: blur($range);
+          filter: blur($range);
+}
+/* 定位上下左右居中 */
+@mixin center() {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+/* 单边 border-radius */
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+}
+
+/* opacity */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  /* IE8 filter */
+  $opacity-ie: ($opacity * 100);
+  filter: "alpha(opacity=${opacity-ie})";
+}

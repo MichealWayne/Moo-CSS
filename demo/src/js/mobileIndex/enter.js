@@ -2,6 +2,7 @@
  * /src/js/index/enter.js -> index.html
  */
 
+//import '~/sass/mobile/base.scss';
 import '~/less/mobile/base.less'
 import 'less/mobileIndex.less';
 

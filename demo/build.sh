@@ -1,5 +1,5 @@
-# build prod
+# build start
 
-echo "build prod!"
+echo "build start!"
 
-npm run build:prod && exec /bin/bash
+npm run start

@@ -83,12 +83,13 @@ module.exports = (options = {}) => {
         resolve: {
             extensions: ['.js', '.css', 'less'],
             alias: {
-                '~': path.resolve(__dirname, '../'),
+                '~': path.resolve(__dirname, '../Moo-CSS/'),
                 '@': path.resolve(__dirname, 'src'),
                 'mock': path.resolve(__dirname, 'src/mock'),
                 'lib': path.resolve(__dirname, 'src/js/lib'),
                 'css': path.resolve(__dirname, 'src/css'),
-				'less': path.resolve(__dirname, 'src/less')
+                'less': path.resolve(__dirname, 'src/less'),
+                'sass': path.resolve(__dirname, 'src/sass')
             }
         },
 
@@ -168,6 +169,34 @@ module.exports = (options = {}) => {
                         },
 						{
 							loader: 'less-loader',
+							options: {
+								strictMath: true,
+								plugins: [ new LessFunc() ],
+                                localIdentName: 'purify_[hash:base64:5]',
+                                modules: true
+							}
+						}
+					]
+                },
+				
+				// sass
+                {
+                    test: /\.scss$/,
+                    use: [
+						MiniCssExtractPlugin.loader,
+						'css-loader',
+						{
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: [
+                                    require('autoprefixer')(BROWSERS_VERSION_SET)
+                                ],
+                                localIdentName: 'purify_[hash:base64:5]',
+                                modules: true
+                            }
+                        },
+						{
+							loader: 'sass-loader',
 							options: {
 								strictMath: true,
 								plugins: [ new LessFunc() ],

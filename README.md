@@ -8,16 +8,21 @@
 - 缺点：
 	- 上手成本~
 	
+├─less
+│   ├─mobile
+│   └─pc
 	
 ```
 Moo-CSS
-├─css     css Base
-├─less    less Base
-└─demo    使用案例
+├─Moo-CSS
+│   ├─css	// css base
+│   ├─less	// less base
+│   └─sass	// sass base
+└─demo      // 使用demo
 ```
 
-demo url: http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html
- 建议调成手机模式在开发者模式中查看。
+demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html)。
+ 移动端demo建议调成手机模式在开发者模式中查看。
 
 ----------
 

@@ -1,0 +1,112 @@
+/*------------------------------------*\
+    Mobile component
+\*------------------------------------*/
+
+@import '../Skin/colors.less';
+@import '../Skin/skins.less';
+@import './mixins.less';
+
+/* border radius */
+.f-bdr10 {
+    border-radius: 5px;
+}
+.f-bdr8 {
+    border-radius: 4px;
+}
+
+
+/* icon */
+.u-block, 
+.u-icon, 
+.u-btn {
+    display: block;
+}
+
+.u-block_il, 
+.u-icon_il, 
+.u-btn_il {
+    display: inline-block;
+}
+.u-inline {
+    display: inline;
+}
+
+/* set Pseudo class */
+.f-pclass {
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+    }
+}
+
+/* retina screen border 1px */
+.f-b_1px{
+    position: relative;
+    &:after{
+        position: absolute;
+        content: '';
+        background-color: @border-gray;
+    }
+}
+
+.bb_1px:after,
+.bt_1px:after {
+    left: 0;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scale(1, 0.5);
+            transform: scale(1, 0.5);
+}
+
+.bb_1px:after {
+    bottom: 0;
+}
+
+.bt_1px:after {
+    top: 0;
+}
+
+.bl_1px:after,
+.br_1px:after {
+    top: 0;
+    width: 1px;
+    height: 100%;
+    -webkit-transform: scale(0.5, 1);
+            transform: scale(0.5, 1);
+}
+.bl_1px:after{
+    left: 0;
+}
+.br_1px:after{
+    right: 0;
+}
+
+/* button basic */
+.u-btn, 
+.u-btn_il {
+    padding: 0;
+    text-align: center;
+    border-radius: 4px;
+
+    .s-btn();
+
+    &[no-bdr] {
+        border-radius: 0;
+    }
+}
+
+/* dialog or window */
+.u-mask {
+    z-index: 18;
+    .fixed-mask();
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.u-win,
+.u-dialog {
+    position: fixed;
+    z-index: 19;
+    .center();
+}

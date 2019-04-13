@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    Mobile grid
+\*------------------------------------*/
+
+@import '../Component/mixins';
+@import '../Base/sizes';
+
+/* box-sizing */
+.g-box_b {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.g-box_c{
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+/* center */
+.g-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* position */
+.g-pf {
+    position: fixed;
+}
+.g-pr {
+  position: relative;
+}
+
+.g-pa {
+  position: absolute;
+}
+
+/* calculate font-size line-height */
+@mixin g-calculate-font($start,$end,$interval:2) { //
+  $i: $start;
+  @while ($i <= $end) {
+    .g-fs#{$i} {
+      font-size: unit($i);
+    }
+    $i: $i + $interval
+  }
+}
+
+@include g-calculate-font(20, 44, 2);
+
+.g-lh150per {
+  line-height: 1.5;
+}
+
+.g-lh180per {
+  line-height: 1.8;
+}
+
+.g-lh200per {
+  line-height: 2;
+}
+
+/* calculate margin */
+@mixin g-calculate-margin($start, $end ,$interval:5) {
+  $i: $start;
+  @while ($i <= $end) {
+    .g-m#{$i} {
+      margin: unit($i);
+    }
+    .g-mr#{$i} {
+      margin-right: unit($i);
+    }
+    .g-ml#{$i} {
+      margin-left: unit($i);
+    }
+    .g-mt#{$i} {
+      margin-top: unit($i);
+    }
+    .g-mb#{$i} {
+      margin-bottom: unit($i);
+    }
+    $i: $i + $interval
+  }
+}
+
+@include g-calculate-margin(5, 100, 5)

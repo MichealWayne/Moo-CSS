@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    PC unit
+\*------------------------------------*/
+
+@import '../Component/mixins';
+@import '../Base/sizes';
+
+.u-w {
+  display: block;
+  width: 100%;
+}
+
+/* padding right */
+.u-pr4per {
+  padding-right: 4%;
+}
+
+/* padding left */
+.u-pl4per {
+  padding-left: 4%;
+}
+
+/* padding */
+.u-w92per {
+  display: block;
+  width: 92%;
+}
+
+/* calculate width height padding */
+@mixin u-calculate-gwh($value,$interval:5) {
+  $i: $interval;
+  @while ($i < $value) {
+    .u-p#{$i} {
+      padding: unit($i)
+    }
+    .u-pr#{$i} {
+      padding-right: unit($i);
+    }
+    .u-pl#{$i} {
+      padding-left: unit($i);
+    }
+    .u-pb#{$i} {
+      padding-bottom: unit($i);
+    }
+    .u-pt#{$i} {
+      padding-top: unit($i);
+    }
+    .u-w#{$i} {
+      display: block;
+      width: unit($i);
+    }
+    .u-h#{$i} {
+      display: block;
+      height: unit($i)
+    }
+    $i: $i + $interval;
+  }
+}
+
+@include u-calculate-gwh(100, 5);
+
+/* special width and height */
+.u-w150 {
+  display: block;
+  width: $s150;
+}
+
+.u-w200 {
+  display: block;
+  width: $s200;
+}
+
+.u-h150 {
+  display: block;
+  height: $s150;
+}
+
+.u-h200 {
+  display: block;
+  height: $s200;
+}
