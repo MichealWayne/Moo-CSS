@@ -1,5 +1,7 @@
 # Moo-CSS 模块化面向对象的css写法
 
+
+
 - 核心：组件化+面向对象。
 - 优点：
 	- 重用性强
@@ -8,23 +10,26 @@
 - 缺点：
 	- 上手成本~
 	
-├─less
-│   ├─mobile
-│   └─pc
-	
+
 ```
 Moo-CSS
-├─Moo-CSS
+├─moo-css-base
 │   ├─css	// css base
 │   ├─less	// less base
-│   └─sass	// sass base
-└─demo      // 使用demo
+│   ├─sass	// sass base
+│   └─stylus	// stylus base
+├─docs		// documents
+└─demo      // demos
 ```
 
-demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/dist/mobileIndex.html)。
+## guide
+- [Docuemnt(Beta)](http://blog.michealwayne.cn/Moo-CSS/docs/)
+- [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
+- demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/mobileIndex.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
 
 ----------
+
 
 ## 基本规范
 ### 1.1 ID、class、attr选择器的使用范围

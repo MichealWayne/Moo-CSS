@@ -1,0 +1,34 @@
+.m-home {
+    margin: 0px auto;
+    padding: 3.6rem 2rem 0;
+    max-width: 960px;
+}
+.m-title {
+    img {
+        max-height: 280px;
+        display: block;
+        margin: 3rem auto 1.5rem;
+    }
+    .name, 
+    .description,
+    .action {
+        margin: 1.8rem auto;
+    }
+    .description {
+        line-height: 1.3;
+    }
+    .btn {
+        width: 148px;
+    }
+}
+
+.m-feature {
+    font-weight: normal;
+    
+    .item {
+        p {
+            margin-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+}

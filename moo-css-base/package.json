@@ -1,0 +1,27 @@
+{
+  "name": "moo-css-base",
+  "version": "0.2.0",
+  "description": "Moo-CSS Base layer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello Moo-CSS~\" && exit 1"
+  },
+  "keywords": [
+    "Moo-CSS",
+    "build",
+    "FE",
+    "css",
+    "less",
+    "sass",
+    "stylus"
+  ],
+  "author": "michealwayne",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichealWayne/moo-css.git"
+  },
+  "__npminstall_done": "Fri May 10 2019 10:39:51 GMT+0800 (GMT+08:00)",
+  "_from": "moo-css-base@0.1.0",
+  "_resolved": "https://registry.npm.taobao.org/moo-css-base/download/moo-css-base-0.1.0.tgz"
+}

@@ -1,0 +1,67 @@
+/**
+ * Skin层
+ */
+
+
+:global {
+
+[s-theme__foot] {
+    color: #4e6e8e;
+}
+.a-trans_color {
+    transition: background-color .6s ease,  color .6s ease;
+}
+
+/* default theme */
+[s-theme="default"] {
+    color: #333;
+    background-color: #fff;
+
+    [s-theme__navbar]{
+        color: #fff;
+        background-color: #333;
+    
+        a {
+            color: #fff;
+        }
+    }
+    .f-b_1px {
+        border-color: #eee;
+    }
+
+    
+    [s-description] {
+        color: #6a8bad;
+    }
+    [s-feature] {
+        color: #3a5169;
+    }
+}
+
+/* dark theme */
+[s-theme="dark"] {
+    color: #fff;
+    background-color: #000;
+
+    [s-theme__navbar] {
+        
+        background-color: #ddd;
+
+        a {
+            color: #333;
+        }
+    }
+
+    .f-b_1px {
+        border-color: #222;
+    }
+    
+    [s-description] {
+        color: #666;
+    }
+    [s-feature] {
+        color: #45d1fb;
+    }
+}
+
+}

@@ -1,0 +1,22 @@
+@import '~moo-css-base/pcMixins.scss';
+
+.m-navbar {
+    padding: 12px 24px;
+    line-height: 2.2rem;
+    position: fixed;
+    z-index: 20;
+    @include tl(0, 0);
+    right: 0;
+    height: 3.6rem;
+    box-sizing: border-box;
+}
+
+.m-nav {
+    width:  260px;
+
+    .m-nav__item {
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
