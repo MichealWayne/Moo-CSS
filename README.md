@@ -1,7 +1,12 @@
 # Moo-CSS 模块化面向对象的css写法
 
+<p align="center">
+  <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
+    <img alt="antd-admin" height="64" src="./docs/logo.png">
+  </a>
+</p>
 
-
+- [English](./README_en.md)
 - 核心：组件化+面向对象。
 - 优点：
 	- 重用性强
@@ -23,7 +28,7 @@ Moo-CSS
 ```
 
 ## guide
-- [Docuemnt(Beta)](http://blog.michealwayne.cn/Moo-CSS/docs/)
+- [Document(Beta)](http://blog.michealwayne.cn/Moo-CSS/docs/)
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
@@ -38,9 +43,9 @@ Moo-CSS
 - attr：作为皮肤控制
 
 ## 1 M（模块化）
-Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层级**的模块化。
+Moo-CSS中的M，模块化。Moo-CSS的模块化主要体现在**全局样式的模块化**以及**模块私有样式**两个方面。
 
-## 1.1 样式分类
+### 1.1 样式分类
 根据样式属性的特征，将样式分类为以下模块：
 - **reset**：重置。重置浏览器默认样式；
 - **grid**：布局。布局位置相关样式。包含样式属性：margin, position, line-height等；
@@ -52,14 +57,18 @@ Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层�
 - **skin**：皮肤。主题颜色背景色等；包含样式属性：color, background-color, box-shadow等；
 - **animation**：动画。过渡和动画。包含样式属性：animtaion, transition。
 
+
 另外两种特殊模块：
 - **JavaScript DOM**：DOM操作。供js操作DOM节点，**不作样式使用**
 - **React/Vue/Angular sepcial**：框架独有。供专有框架使用，如过渡动画。
 
-**其中grid, module, unit, component, status, animation通常由类（class）实现，skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现**。由属性承担一部分的样式，也弥补了大量类导致的问题。
 
-## 1.2 层级分类
-一个项目中样式可分为如下层级：
+Moo-CSS推荐其中grid, module, unit, component, status, animation通常由类（class）实现；skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。
+
+
+### 1.2 样式分层
+### 样式分层
+根据样式属性的特征，将项目样式分层为以下模块层级：
 - **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。（通常所有页面共用且不做修改）。
 - **Component**：组件层，包含样式组件和方法组件，简单组件样式，如按钮、蒙层；方法组件包括动画方法和预处理方法如rem单位设置、背景图片设置。可依赖于Base层和Skin层。
 - **Skin**：皮肤层，业务中常出现的颜色，背景色，且提供预处理的颜色变量。常供应于Component层和Module层；
@@ -67,9 +76,11 @@ Moo-CSS的模块化主要体现在**样式分类**的模块化以及**样式层�
 - **Layout**: 结构层，提供Module层布局样式，构成最终页面。
 
 
-![moocss](https://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
+## 私有样式模块
+相比于全局样式通用的样式属性来达到复用的效果，私有样式更侧重于样式的独立性。Moo-CSS中，私有样式的模块实现借助于webpack的[css-loader](https://www.npmjs.com/package/css-loader)或[postcss-loader](https://www.npmjs.com/package/postcss-loader)。重点实现**Module**模块层的样式私有化。
 
-也就是说，页面是由Base、Component、Skin、Layout这四个层级辅助Module层完成样式开发。
+
+由于Base层、Component层、Skin层以及Layout层的样式基本无样式冲突情况，故Moo-CSS有且仅将Module层用于私有化。
 
 那么1.1的样式在这几层里如何归类呢？
 
@@ -109,7 +120,7 @@ Base层可参考less/css目录
 
 
 ## 2 OO（面向对象）
-在Moo-CSS的概念里，CSS“对象”是一个可重复的视图。
+在Moo-CSS的概念里，CSS“对象”是一个可重复的视图。Moo-CSS的面向对象主要体现在Module各层级的面向对象。
 
 CSS“对象”由以下四部分组成：
 - HTML，可以是DOM的一个或多个节点；
@@ -365,25 +376,40 @@ w - width
 ### 5.1 主流前端框架中的Component和Module
 在使用主流前端框架，如Vue，Module层可根据在路由views文件中各自定义；Component可在组件component中定义，易于区分和维护。可参考demo中mobileNavs.html。
 在使用主流前端框架，如Vue，Module层可根据在路由views中的vue文件中各自定义；Component可在组件components的vue文件中定义，易于区分和维护。
+
+#### SFC——Vue/Angular(1.x)
 如views/a.vue
 ``` vue
 <template>
-	<div class="m-a">...</div>
+    <div class="m-a">...</div>
 </template>
 <style>
-	.m-a {}
+    .m-a {}
 </style>
+```
+
+或直接使用css modules
+``` vue
+<template>
+    <div :class="$style.a">...</div>
+</template>
+<style module>
+    .a {}
+</style>	
 ```
 
 components/b.vue
 ``` vue
 <template>
-	<div class="u-a">...</div>
+    <div class="u-a">...</div>
 </template>
 <style>
-	.u-a {}
+    .u-a {}
 </style>
 ```
+
+
+#### css in js——React/Angular(2.x)
 
 ### 5.2 关于预处理的mixins和skins
 mixins和skins通常在项目样式Base层，由于预处理定义的方法跟变量不会影响生成后的css体积，因此原则上是越精细越好。
