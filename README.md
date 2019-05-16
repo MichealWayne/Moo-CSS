@@ -2,12 +2,12 @@
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
-    <img alt="antd-admin" height="64" src="./docs/logo.png">
+    <img alt="antd-admin" height="150" src="./docs/logo.png">
   </a>
 </p>
 
 - [English](./README_en.md)
-- 核心：组件化+面向对象。
+- 核心：组件模块化+面向对象。
 - 优点：
 	- 重用性强
 	- 维护性强
@@ -28,6 +28,7 @@ Moo-CSS
 ```
 
 ## guide
+![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
 - [Document(Beta)](http://blog.michealwayne.cn/Moo-CSS/docs/)
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
