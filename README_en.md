@@ -2,6 +2,34 @@
 
 Base Layer, global styles.
 
+<p align="center">
+  <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
+    <img alt="antd-admin" height="150" src="./docs/logo.png">
+  </a>
+</p>
+
+- [中文](./README.md)
+- keys: modularization + object-oriented
+- advantage:
+	- reusability
+	- maintainability
+	- expansibility
+- weakness:
+	- learning cost~
+
+
+```
+Moo-CSS
+├─moo-css-base
+│   ├─css	// css base
+│   ├─less	// less base
+│   ├─sass	// sass base
+│   └─stylus	// stylus base
+├─docs		// documents
+└─demo      // demos
+```
+
+
 ## install
 ``` sh
 npm i -D moo-css-base

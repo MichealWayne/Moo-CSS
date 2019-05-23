@@ -66,7 +66,7 @@ $vwkeep: 4;
 
 /* 使用DIN字体 */
 @mixin font-DIN() {
-    font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+    font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINAlternate-Bold', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
 }
 
 
@@ -97,6 +97,13 @@ $vwkeep: 4;
   background-size: 100% 100%;
   background-position: 0 0;
 }
+
+/* blur */
+@mixin blur ($range) {
+  -webkit-filter: blur($range);
+          filter: blur($range);
+}
+
 
 /*center*/
 @mixin center() {

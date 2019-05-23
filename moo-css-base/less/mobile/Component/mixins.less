@@ -47,7 +47,7 @@
     overflow: hidden;
 }
 
-/* 伪类布局 */
+/* 伪元素布局 */
 .pseudo-class () {
     position: relative;
 
@@ -60,7 +60,7 @@
 
 /* 使用DIN字体 */
 .font-DIN() {
-    font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+    font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINAlternate-Bold', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
 }
 
 /* position top、left */
@@ -76,6 +76,13 @@
     background-size: 100% 100%;
     background-position: 0 0;
 }
+
+/* 模糊 */
+.blur (@range) {
+  -webkit-filter: blur(@range);
+          filter: blur(@range);
+}
+
 
 /* 定位上下左右居中 */
 .center () {

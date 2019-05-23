@@ -48,7 +48,7 @@ pseudo-class()
 
 /* 使用DIN字体 */
 font-DIN()
-  font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+  font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINAlternate-Bold', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
 
 // top、left
 tl($top, $left)
@@ -62,6 +62,12 @@ bis($url)
   background-size 100% 100%
   background-position 0 0
 
+// 模糊
+blur($range)
+  -webkit-filter: blur($range)
+          filter: blur($range)
+
+  
 // 定位上下左右居中
 center()
   top 50%;

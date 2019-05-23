@@ -446,4 +446,5 @@ module.less
 ----------
 
 ## 反馈
-michealwayne@163.com
+- [mail: michealwayne@163.com](mailto:michealwayne@163.com)
+- [github: Moo-css/issues](https://github.com/MichealWayne/Moo-css/issues)
