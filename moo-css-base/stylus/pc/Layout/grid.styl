@@ -1,12 +1,11 @@
-/*
-* Mobile
-* grid
-*/
+/*------------------------------------*\
+    PC grid
+\*------------------------------------*/
 
 @import '../Component/mixins.styl'
 @import '../Base/sizes.styl'
 
-// layout
+/* layout */
 .g-box_b
 	-webkit-box-sizing border-box
 	box-sizing border-box
@@ -19,33 +18,36 @@
 	margin-left auto
 	margin-right auto
 	
-// position
+/* position */
 .g-pr
 	position relative
 
 .g-pa
 	position absolute
+
+.g-pf 
+	position fixed
 	
-// font size, line height
+/* font size, line height */
 g-fs($n, $i = 1)
 	if ($i <= $n)
 		.g-fs{$i}
 			font-size:topx($i)
 		g-fs($n, ($i + 2))
 
-// 10px ~ 40px, in units 0f 2px
+/* 10px ~ 40px, in units 0f 2px */
 g-fs(40, 10)
 
-.g-lh150
+.g-lh150per
 	line-height 1.5
 	
-.g-lh180
+.g-lh180per
 	line-height 1.8
 	
-.g-lh200
+.g-lh200per
 	line-height 2
 	
-// margin
+/* margin */
 .g-m20
 	margin:topx(20)
 	
@@ -58,7 +60,7 @@ g-fs(40, 10)
 .g-m50
 	margin:topx(50)
 	
-// 边距
+/* 边距 */
 g-m($n, $i = 10)
 	if ($i <= $n)
 		.g-mt{$i}
@@ -69,5 +71,5 @@ g-m($n, $i = 10)
 			margin-left:topx($i)
 		g-m($n, ($i + 10))
 		
-// margin-top, margin-left, margin-bottom: 10px ~ 200px, in units of 10px
+/* margin-top, margin-left, margin-bottom: 10px ~ 200px, in units of 10px */
 g-m(200)

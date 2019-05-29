@@ -15,6 +15,12 @@ hh($height)
   height $height
   line-height $height
 
+/* square */
+square($size)
+  width $size
+  height $size
+
+ 
 // 字体大小、行高
 font($size, $line-height)
   font-size $size
@@ -34,6 +40,7 @@ mulit-ellipsis($maxline)
   -webkit-box-orient: vertical;
   overflow: hidden;
 
+/* 伪元素 */
 pseudo-class()
   position: relative;
   &:before,
@@ -41,6 +48,37 @@ pseudo-class()
     position: absolute;
     content: '';
   }
+  
+/* 内联块级元素, 兼容IE6 */
+dib()
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+
+/* 固定定位, 兼容IE6 */
+fixed()
+    position: fixed;
+    _position: absolute;
+    *zoom: 1;
+
+/* 浮动, 兼容 IE6 */
+fl()
+    float: left;
+    *display: inline;
+    _display: inline;
+
+fr()
+    float: right;
+    *display: inline;
+    _display: inline;
+
+
+/* 禁止用户选中 */
+no-select()
+  -webkit-user-select none
+      -moz-user-select none
+	   -ms-user-select none
+          user-select none
 
 
 /* 使用DIN字体 */
@@ -59,11 +97,19 @@ bis($url)
   background-repeat no-repeat
   background-size 100% 100%
   background-position 0 0
+  
+/* 模糊 */
+blur($range)
+  -webkit-filter blur($range)
+	 -moz-filter blur($range)
+      -ms-filter blur($range) 
+          filter blur($range)
 
 // 定位上下左右居中
 center()
   top 50%
   left 50%
+  -webkit-transform translate(-50%, -50%)
   transform translate(-50%, -50%)
 
 /* fixed mask */
@@ -95,26 +141,9 @@ border-left-radius($radius)
   border-bottom-left-radius: $radius;
   border-top-left-radius: $radius;
 
-
-/* 改变滚动条颜色，需要hsl颜色，如.setScroll(hsla(200, 100%, 54%, 1)); */
-set-scroll($scrollcolor)
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 13px;
-    border-radius: 2px;
-  }
-  &::-webkit-scrollbar-track-piece {
-    background-color: fadeout($scrollcolor, 100%);
-    border-left: thin solid fadeout($scrollcolor, 100%);
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: fadeout($scrollcolor, 80%);
-    background-clip: padding-box;
-    border-radius: 5px;
-    min-height: 20px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: fadeout($scrollcolor, 80%);
-    border-radius: 5px;
-  }
+/* opacity */
+opacity($opacity)
+  opacity: $opacity;
+  /* IE8 filter */
+  $opacity-ie: ($opacity * 100);
+  filter: "alpha(opacity=${opacity-ie})";

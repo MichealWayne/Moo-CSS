@@ -1,7 +1,7 @@
-/*
-* Mobile
-* skins
-*/
+/*------------------------------------*\
+    Mobile skins
+\*------------------------------------*/
+
 @import './colors.styl'
 @import '../Component/mixins.styl'
 
@@ -32,6 +32,9 @@
     color $white
 
 // background color
+[s-bgc_white]
+    background-color $white
+
 [s-bgc_red]
     background-color $red
 
@@ -44,7 +47,7 @@
 [s-bgc_gray]
     background-color $font-sub_
 
-.s-btn
+s-btn()
     &[s-color="yellow"]
         background-color $button-yellow
         color $white
@@ -60,9 +63,15 @@
     &[c-color="bd_gray"]
         border thin solid $font-sub_
         color $font-sub_
-    &[s-color="db_white"]
+    &[s-color="bd_white"]
         border thin solid $white
         color $white
+    &[s-color="bd_red"]
+        border: thin solid $button-red;
+        color: $button-red;
+    &[s-color="bd_yellow"]
+        border: thin solid $button-yellow;
+        color: $button-yellow;
     &[s-size="small"]
         line-height: tovw(26);
         font-size: tovw(12);

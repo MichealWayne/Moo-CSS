@@ -141,6 +141,12 @@ $vwkeep: 4;
      border-top-left-radius: $radius;
 }
 
+/* 设置弹性滚动(ios) */
+@mixin set-scroll-elastic () {
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+}
+
 /* 改变滚动条颜色，需要hsl颜色，如.setScroll(hsla(200, 100%, 54%, 1)); */
 @mixin set-scroll($scrollcolor) {
     overflow-y: auto;

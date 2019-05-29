@@ -1,12 +1,11 @@
-/*
-* Mobile
-* unit
-*/
+/*------------------------------------*\
+    Mobile unit
+\*------------------------------------*/
 
 @import '../Component/mixins.styl'
 @import '../Base/sizes.styl'
 
-// width
+/* width */
 .u-w
     display block
     width 100%
@@ -19,26 +18,24 @@
     display block
     width 50%
 
-// width height padding
+/* width height padding */
 u-whp($n, $i = 10)
     if ($i <= $n)
         .u-w{$i}
-            width: tovw($i)
+            width tovw($i)
         .u-h{$i}
-            height:tovw($i)
+            height tovw($i)
         .u-pt{$i}
-            padding-top:tovw($i)
+            padding-top tovw($i)
         .u-pr{$i}
-            padding-right:tovw($i)
+            padding-right tovw($i)
         .u-pb{$i}
-            padding-bottom: tovw($i)
+            padding-bottom tovw($i)
         .u-pl{$i}
-            padding-left: tovw($i)
-        .u-p{$i}
-            padding-left:tovw($i)
+            padding-left tovw($i)
         u-whp($n, ($i + 10))
 
-// width, height, padding-top, padding-left, padding-bottom: 10px ~ 100px, in units of 10px
+/* width, height, padding-top, padding-left, padding-bottom: 10px ~ 100px, in units of 10px */
 u-whp(100);
 
 .u-w150
@@ -47,7 +44,7 @@ u-whp(100);
 .u-h200
     width $s200
     
-// height
+/* height */
 .u-h
     height 100%
     
@@ -57,7 +54,7 @@ u-whp(100);
 .u-h200
     height $s200
     
-// padding
+/* padding */
 .u-p10
     padding $s10
     
@@ -70,22 +67,22 @@ u-whp(100);
 .u-p30
     padding $s30
     
-// padding top
+/* padding top */
 .u-pt15
     padding-top $s15
     
-// padding right
+/* padding right */
 .u-pr4per
     padding-right 4%
     
 .u-pr15
     padding-right $s15
     
-// padding bottom
+/* padding bottom */
 .u-pb15
     padding-bottom $s15
     
-// padding left
+/* padding left */
 .u-pl4per
     padding-left 4%
     

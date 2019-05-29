@@ -92,6 +92,8 @@
 /* 禁止文字选中 */
 .no-select () {
   -webkit-user-select: none;
+      -moz-user-select:none;
+	   -ms-user-select:none;
           user-select: none;
 }
 
@@ -120,6 +122,8 @@
 /* 模糊 */
 .blur (@range) {
   -webkit-filter: blur(@range);
+  	 -moz-filter: blur(@range);
+      -ms-filter: blur(@range); 
           filter: blur(@range);
 }
 

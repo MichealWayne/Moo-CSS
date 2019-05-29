@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 
-/* text */
+/* underline */
 .f-unl {
     text-decoration: underline;
 }
@@ -11,9 +11,12 @@
     text-decoration: none;
 }
 
+/* clear webkit appearance */
 .f-wk_reset {
     -webkit-appearance: none;
 }
+
+/* background image stretch */
 .f-bg_cover,
 [f-bg_cover]{
     background-repeat: no-repeat;
@@ -21,6 +24,7 @@
     background-size: 100% 100%;
 }
 
+/* overflow */
 .f-ovhidden {
     overflow: hidden;
 }
@@ -28,7 +32,7 @@
     overflow-y: auto;
 }
 
-/* 溢出隐藏 */
+/* overflow show '...' */
 .f-ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -36,6 +40,7 @@
     overflow: hidden;
 }
 
+/* mulit-lines equal height */
 .f-equal {
     margin-bottom: -32767px;
     padding-bottom: 32767px;

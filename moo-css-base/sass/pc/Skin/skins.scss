@@ -32,6 +32,9 @@
 }
 
 /* background color */
+[s-bgc_white] {
+    background-color: $white;
+}
 [s-bgc_red] {
     background-color: $red;
 }
@@ -70,6 +73,14 @@
     &[s-color="bd_white"] {
         border: thin solid $white;
         color: $white;
+    }
+	&[s-color="bd_red"] {
+        border: thin solid $button-red;
+        color: $button-red;
+    }
+	&[s-color="bd_yellow"] {
+        border: thin solid $button-yellow;
+        color: $button-yellow;
     }
 
     &:hover {

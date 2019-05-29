@@ -2,12 +2,16 @@
     Mobile function
 \*------------------------------------*/
 
-/* 清除webkit默认样式 */
+/* clear webkit appearance */
 .f-wk_reset {
     -webkit-appearance: none;
 }
+/* tap transparent */
+.f-tap_reset {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-/* 背景图拉伸 */
+/* background image stretch */
 .f-bg_cover,
 [f-bg_cover]{
     background-repeat: no-repeat;
@@ -23,21 +27,21 @@
     overflow-y: auto;
 }
 
-/* 溢出... */
+/* overflow show '...' */
 .f-ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-/* 多列等高 */
+/* mulit-lines equal height */
 .f-equal {
     margin-bottom: -9999px;
     padding-bottom: 9999px;
 }
 
 
-/* 文字对齐 */
+/* text align */
 .f-tl {
     text-align: left;
 }
@@ -65,7 +69,7 @@
 }
 
 
-/* 浮动 */
+/* float */
 .f-fl {
     float: left;
     display: inline;
@@ -84,12 +88,12 @@
     clear: right;
 }
 
-/* 文字不换行 */
+/* no line-break */
 .f-nowrap {
     white-space: nowrap;
 }
 
-/* 文字粗细 */
+/* font weight */
 .f-normal {
     font-weight: normal;
 }
@@ -97,17 +101,17 @@
     font-weight: bold;
 }
 
-/* 首行缩进2个字符 */
+/* indentation 2 words */
 .f-ti2 {
     text-indent: 2em;
 }
 
-/* 斜体 */
+/* italic */
 .f-ft_italic{
     font-style: italic;
 }
 
-/* 下划线 */
+/* underline */
 .f-unl {
     text-decoration: underline;
 }

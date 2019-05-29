@@ -1,10 +1,10 @@
-/*
-* PC
-* skins
-*/
+/*------------------------------------*\
+    PC skins
+\*------------------------------------*/
+
 @import './colors.styl'
 
-// font color
+/* font color */
 [s-cr_red]
     color $red
 
@@ -30,7 +30,10 @@
 [s-cr_white]
     color $white
 
-// background color
+/* background color */
+[s-bgc_white]
+    background-color $white
+
 [s-bgc_red]
     background-color $red
 
@@ -43,7 +46,7 @@
 [s-bgc_gray]
     background-color $font-sub_
 
-.s-btn
+s-btn()
     &[s-color="yellow"]
         background-color $button-yellow
         color $white
@@ -59,9 +62,15 @@
     &[c-color="bd_gray"]
         border thin solid $font-sub_
         color $font-sub_
-    &[s-color="db_white"]
+    &[s-color="bd_white"]
         border thin solid $white
         color $white
+    &[s-color="bd_red"]
+        border: thin solid $button-red;
+        color: $button-red;
+    &[s-color="bd_yellow"]
+        border: thin solid $button-yellow;
+        color: $button-yellow;
     &[s-size="small"]
         line-height: 26px;
         font-size: 12px;

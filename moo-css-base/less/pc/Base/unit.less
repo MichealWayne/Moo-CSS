@@ -6,7 +6,7 @@
 @import '../Component/mixins.less';
 @import '../Base/sizes.less';
 
-// width
+/* width */
 .u-w {
     display: block;
     width: 100%;
@@ -20,7 +20,7 @@
     width: 50%;
 }
 
-// width height padding
+/* width height padding */
 .u-whp(@n, @i: 10) when (@i <= @n) {
     .u-w@{i} {
         .px(width, @i);
@@ -40,6 +40,9 @@
     .u-pl@{i} {
         .px(padding-left, @i);
     }
+    .u-p@{i} {
+        .px(padding, @i);
+    }
 
     .u-whp(@n, (@i + 10))
 }
@@ -55,7 +58,7 @@
     width: @s200;
 }
 
-// height
+/* height */
 .u-h {
     height: 100%;
 }
@@ -67,28 +70,18 @@
 }
 
 
-// padding
-.u-p10 {
-    padding: @s10;
-}
+/* padding */
 .u-p15 {
     padding: @s15;
 }
-.u-p20 {
-    padding: @s20;
-}
-.u-p30 {
-    padding: @s30;
-}
 
-
-// padding top
+/* padding top */
 .u-pt15 {
     padding-top: @s15;
 }
 
 
-// padding right
+/* padding right */
 .u-pr4per{
     padding-right: 4%;
 }
@@ -97,13 +90,13 @@
 }
 
 
-// padding bottom
+/* padding bottom */
 .u-pb15 {
     padding-bottom: @s15;
 }
 
 
-// padding left
+/* padding left */
 .u-pl4per{
     padding-left: 4%;
 }

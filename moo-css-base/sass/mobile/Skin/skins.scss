@@ -75,6 +75,14 @@
         border: thin solid $white;
         color: $white;
     }
+	&[s-color="bd_red"] {
+        border: thin solid $button-red;
+        color: $button-red;
+    }
+	&[s-color="bd_yellow"] {
+        border: thin solid $button-yellow;
+        color: $button-yellow;
+    }
 
     &[s-size="small"] {
         line-height: 26px;

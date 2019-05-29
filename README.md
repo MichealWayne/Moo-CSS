@@ -1,4 +1,4 @@
-# Moo-CSS 模块化面向对象的css写法
+# Moo-CSS 模块化面向对象的css写法规则策略
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -19,7 +19,6 @@
 ```
 Moo-CSS
 ├─moo-css-base
-│   ├─css	// css base
 │   ├─less	// less base
 │   ├─sass	// sass base
 │   └─stylus	// stylus base
@@ -29,7 +28,7 @@ Moo-CSS
 
 ## guide
 ![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
-- [Document(Beta)](http://blog.michealwayne.cn/Moo-CSS/docs/)
+- [文档地址](http://blog.michealwayne.cn/Moo-CSS/docs/)
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
@@ -44,37 +43,50 @@ Moo-CSS
 - attr：作为皮肤控制
 
 ## 1 M（模块化）
-Moo-CSS中的M，模块化。Moo-CSS的模块化主要体现在**全局样式的模块化**以及**模块私有样式**两个方面。
+Moo-CSS中的M(Module)，模块化。Moo-CSS的模块化主要体现在**样式属性**的模块化以及**样式层级**的模块化。
 
-### 1.1 样式分类
-根据样式属性的特征，将样式分类为以下模块：
-- **reset**：重置。重置浏览器默认样式；
-- **grid**：布局。布局位置相关样式。包含样式属性：margin, position, line-height等；
-- **module**：模块。业务模块，头、导航、菜单、列表等等；
-- **function**：功能。溢出隐藏等功能性样式；包含样式属性：clear, text-align, overflow, font-style, font-weight, font-family, vertical-align, white-space, text-decoration, text-indent等；
-- **unit**：单元。宽高，padding等影响块或元素的常用单元样式；包含样式属性：width, height, padding, display, border, flex等；
-- **component**：组件。图标，蒙层等常用轻量样式组件；
-- **status**：状态。透明度、是否隐藏、层级等显示状态样式（是规定唯一可设置!important的部分）；包含样式属性：visibility, opacity, z-index, transform等；
-- **skin**：皮肤。主题颜色背景色等；包含样式属性：color, background-color, box-shadow等；
-- **animation**：动画。过渡和动画。包含样式属性：animtaion, transition。
+### 1.1 样式属性分类
+根据样式属性的特征，将样式属性分类为以下模块，并根据模块给定命名前缀（[命名规则-标志前缀](http://blog.michealwayne.cn/Moo-CSS/docs/nameRule/#基本规则)）：
+- **reset**：**重置**，样式集合。重置浏览器默认样式；
+- **grid**：**布局**。布局位置相关样式。包含样式属性：margin, position, line-height等；
+- **module**：**模块**，样式集合。业务模块，头、导航、菜单、列表等等；
+- **function**：**功能**。溢出隐藏等功能性样式；包含样式属性：clear, text-align, overflow, font-style, font-weight, font-family, vertical-align, white-space, text-decoration, text-indent等；
+- **unit**：**单元**。宽高、padding等影响块或元素的常用单元样式；包含样式属性：width, height, padding, display, border, flex等；
+- **component**：**组件**，样式集合。图标，蒙层等常用轻量样式组件；
+- **status**：**状态**。透明度、是否隐藏、层级等显示状态样式（是规定唯一可设置!important的部分）；包含样式属性：visibility, opacity, z-index, transform等；
+- **skin**：**皮肤**。主题颜色背景色等；包含样式属性：color, background-color, box-shadow等；
+- **animation**：**动画**。过渡和动画。包含样式属性：animtaion, transition。
 
 
 另外两种特殊模块：
-- **JavaScript DOM**：DOM操作。供js操作DOM节点，**不作样式使用**
-- **React/Vue/Angular sepcial**：框架独有。供专有框架使用，如过渡动画。
+- **JavaScript DOM**：**DOM操作**。供js操作DOM节点，**不作样式使用**
+- **React/Vue/Angular sepcial**：**框架独有**。供专有框架使用，如过渡动画。
 
 
 Moo-CSS推荐其中grid, module, unit, component, status, animation通常由类（class）实现；skin通常由属性（attribute）实现。function大部分由类实现，部分由属性实现。
+
+更多样式属性归类可参考[样式模块词典>>](http://blog.michealwayne.cn/Moo-CSS/docs/nameDictionary/#样式模块词典)
+
+> 注意，Moo-CSS推荐其中
+grid, module, unit, component, status, animation通常由className实现；
+skin通常由属性(attribute)实现，*小程序通过className实现；
+function大部分由className实现，部分由属性实现。
+
+> 使用className以及attribute来确认样式可以较好避免权重问题，且从中我们可以得知skin作为辅助样式而样式权重相比较低。Moo-CSS推荐避免ID以及@important进行样式开发，有且仅有一个@important样式用于元素隐藏(`.z-hide { display: none @important }`)。
 
 
 ### 1.2 样式分层
 ### 样式分层
 根据样式属性的特征，将项目样式分层为以下模块层级：
-- **Base**：基础层，样式最底层，包含样式重置reset以及极常出现的布局及单样式、展示状态。（通常所有页面共用且不做修改）。
-- **Component**：组件层，包含样式组件和方法组件，简单组件样式，如按钮、蒙层；方法组件包括动画方法和预处理方法如rem单位设置、背景图片设置。可依赖于Base层和Skin层。
-- **Skin**：皮肤层，业务中常出现的颜色，背景色，且提供预处理的颜色变量。常供应于Component层和Module层；
-- **Module**：模块层，根据业务划分的模块，依赖于上面几个模块；
+- **Base**：基础层，样式最底层，包含样式重置reset、提供样式变量及方法、供给极常出现的样式库。（通常所有页面共用且不做修改）。
+- **Component**：组件层，包含样式组件和方法组件，简单组件样式。如按钮、蒙层；方法组件包括动画和mixins方法。可依赖于Base层和Skin层。
+- **Skin**：皮肤层，设置颜色、背景色等皮肤，且提供项目独有颜色变量。常供应于Component层和Module层；
+- **Module**：模块层，根据业务划分的模块，依赖于上面几个模块以及Layout层；
 - **Layout**: 结构层，提供Module层布局样式，构成最终页面。
+
+其中，Base、Component、Skin、Layout中样式作用域为全局，Module层样式保持私有性。各层级保持独立性，满足SRP(单一功能原则)。
+
+详细介绍可见[文档-样式分层](http://blog.michealwayne.cn/Moo-CSS/docs/moocss/#样式分层)
 
 
 ## 私有样式模块
@@ -83,51 +95,27 @@ Moo-CSS推荐其中grid, module, unit, component, status, animation通常由类�
 
 由于Base层、Component层、Skin层以及Layout层的样式基本无样式冲突情况，故Moo-CSS有且仅将Module层用于私有化。
 
-那么1.1的样式在这几层里如何归类呢？
-
-
-多页面：
-- Base：reset、unit（高权重）、function（高权重）、status（高权重）、component（高权重）、theme（高权重），theme attribute（高权重）、grid（高权重）
-- Component：component，animation、function
-- Skin：skin
-- Layout: grid
-- Module：页面私有module、component
-
-> *其中Base的样式，其样式属性不建议超过5个标签；Component的选择器层级不建议超过2层，Module的选择器层级不建议超过4层。
-
-Base层可参考less/css目录
-
-
-单页面（不考虑后续项目使用，较少）：
-- Base：reset、unit、function、status
-- Component：component，animation
-- Skin：skin
-- Module：module
-- Layout: grid
 
 
 ### 1.3 样式权重计算
-公式
+权重计算参考公式：
 ```
-	1 / （样式资源量 / 样式属性耦合度 * 0.4 + 0.3 / 样式使用率 ^ 2 + 选择器权重 * 0.3）
+1 / （样式资源量 / 样式属性耦合度 * 0.4 + 0.3 / 样式使用率 ^ 2 + 选择器权重 * 0.3）
 ```
 
 数值越大权重越高，高权重可归入Base层。
 
-
-> 其中，样式资源量可由样式代码量和引入资源大小进行衡量；样式属性耦合度是指在多样式属性的样式中，属性直接的耦合度，如溢出省略'...'样的耦合度就非常高，单属性为1；样式使用率主要考虑多页面（路由）的样式使用率；选择器权重计算值越小越好。**权重公式仅做参考**
-
-
+其中，样式资源量可由样式代码量和引入资源大小进行衡量；样式属性耦合度是指在多样式属性的样式中，属性直接的耦合度，如溢出省略'...'样的耦合度就非常高，单属性为1；样式使用率主要考虑多页面（路由）的样式使用率；选择器权重计算值越小越好。**权重公式仅做参考，简单来说就是提取高频使用且不占用大量资源的样式/方法。**
 
 
 ## 2 OO（面向对象）
-在Moo-CSS的概念里，CSS“对象”是一个可重复的视图。Moo-CSS的面向对象主要体现在Module各层级的面向对象。
+Moo-CSS中的OO(Object-Oriented)，面向对象。Moo-CSS的面向对象主要体现在Component和Module层。
 
-CSS“对象”由以下四部分组成：
+同OOCSS，Moo-CSS中的CSS对象由以下4部分内容组成：
 - HTML，可以是DOM的一个或多个节点；
-- CSS声明，关于这些DOM节点样式的CSS声明，所有这些节点都以包装节点的类名开头
-- 组件，如背景图片，sprites等用于展示资源的
-- 与对象关联的javascript行为、侦听器或方法。
+- CSS声明，关于这些DOM节点样式的CSS声明，其中部分CSS声明满足私立性；
+- 资源组件，如背景图片，sprites等用于展示资源的；
+- 事件，与对象关联的javascript行为、侦听器或方法。
 
 ### 2.1 两个原则
 #### 2.1.1 分离结构和皮肤
@@ -143,13 +131,14 @@ CSS“对象”由以下四部分组成：
 ### 2.2 OO特征
 
 #### 2.2.1 封装
-按1.1中样式模块分类封装，保持模块之间的独立性
+Moo-CSS的封装一方面体现在Module/Component中对象内容的封装，保持对象之间的独立性；
+另一方面，样式属性/方法的封装以及各层级的封装均体现了其封闭性。
 
 #### 2.2.2 继承
-Component层可由页面Module层进行样式继承和拓展
+页面Module层可由Component层进行样式继承和拓展，各模块符合开闭原则(The Open/Closed Principle)
 
 #### 2.2.3 多态
-Base层样式可拼接成多种模块容器，这些模块容易包含原有的样式多态性。
+Moo-CSS所说的多态一方面是指对应平台的多态样式/方法。比如移动端和PC端的Component层分别提供了rem换算方法`torem`，调用方式相同而移动端进行了1:75的单位换算，而PC端进行了1:54的单位换算。
 
 
 ### 2.3 三个建议
@@ -165,30 +154,43 @@ Base层样式可拼接成多种模块容器，这些模块容易包含原有的�
 ## 3 命名
 类名或属性名由小写字母，`_`、`-`符号组成，以标志来确定样式命名空间。
 
-类或属性的写法为：
+className或attribute由小写字母，`_`、`-`符号组成，以标志来确定样式命名空间。
+
+className或attribute的写法为：
 ```
-	标志-类/或属性-字母值
-```	
+标志前缀-className/attribute_字母值
+``` 
 或
-```	
-	标志-类/属性数字值
+``` 
+标志前缀-className/attribute数字值
 ```
 
-其中标志由样式模块确认：
+### 基本规则
+- 类名或属性名由小写字母、数字、`_`、`-`符号组成，不包含大写字母；
+- 连字符分隔单词(`-`)，以代替驼峰式命名。如： head-menu；
+- 双下划线分隔模块和元素(`__`)。如：nav__item；
+- 单下划线分隔属性和英文值(`_`)。如：color_red。
+
+
+其中标志前缀由样式模块确认：
 - `g-`：grid
 - `m-`: module
 - `f-`: function
 - `u-`: component, unit
 - `z-`: status
 - `s-`: skin
-
 - `a-`: animation
 - `j-`: JavaScript DOM
 
-属性简写，如`margin-top` -> `mt`，`background-color` -> `bgc`，属性值单位为px时，省略px；为rem时，数字转为px并省略rem；为`%`时，则`%`换为per，
-如`padding-left: 30px` -> `pl30`，`width: 1rem` -> `w75`，`left: 50%` -> `l50per`。
+特殊样式模块前缀：
+- `v*-`: VueJS专用，如VueJS专用动画`.va-fadein`
+- `r*-`: ReactJS专用，如ReactJS专用宽度`.ru-w100`
+- `a*-`: Angular专用，如Angular专用皮肤`.as-cr_red`
 
-类名为非模块时，名字为标识，如`icon`、`ovhidden`。
+属性简写，如`margin-top` -> `mt`，`background-color` -> `bgc`，属性值单位为px时，省略px；为rem时，数字转为px并省略rem；为`%`时，则`%`换为`per`，
+如`padding-left: 30px` -> `pl30`，`width: 1rem` -> `w75`，`left: 50%` -> `l50per`。更多属性简写可参考[样式属性命名>>](http://blog.michealwayne.cn/Moo-CSS/docs/nameDictionary/#样式属性命名)
+
+属性值为非模块时，名字为标识，如`icon`、`ovhidden`。
 
 结合标志，如下
 ```
@@ -201,34 +203,43 @@ Base层样式可拼接成多种模块容器，这些模块容易包含原有的�
 
 类名为module时，按照如下命名规则
 
-### 3.1 module命名规则
-module分为块（Block）及元素（Element），
+### 3.1 Module命名规则
+Module结合Base层、Component层、Skin层、Layout层完成整个样式。其命名通常与项目业务耦合，部分命名可参考[Module命名词典>>](http://blog.michealwayne.cn/Moo-CSS/docs/nameDictionary/#module命名词典)
+
+#### 方式1：BEM的BE
+```
+(标志前缀)-类块__类元素
+```
+其中标识前缀可省略
+
+Module分为块（Block）及元素（Element），
 
 Block，即OO中的容器，是用来标识一个具体块的关键字其实就是这个块的名字，如：头->head, 内容->content, 导航->nav, 尾->foot。一个块必须有一个唯一的名字（类），这样才能保证块的独立性。
 块由gird来控制其布局。
 
 Element，依赖于块的元素，是用来标识一个元素的关键字也是这个元素的名字。如导航栏链接或菜单的每一项->item
 我们在长名称中使用连字符分隔单词（例如，block-name），使用两个下划线来分隔块名和元素名（block-name__element-name）。
+块名称为其元素和专属修饰符定义命名空间。
+
 
 
 如
 ``` html
 <nav class="m-nav">
-	<a class="m-nav__item">nav 1</a>
-	<a class="m-nav__item">nav 2</a>
+    <a class="m-nav__item">nav 1</a>
+    <a class="m-nav__item">nav 2</a>
 </nav>
 ```
 
-### 3.2 module结合Base层、Component层、Skin层、Layout层完成整个样式，
-类class的顺序为：**module Base Component(function) Skin Layout**。
+#### 结合其它层完成整个样式
 
 如
 ``` html
 <section class="g-pr">
-	<nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
-		<a class="m-nav__item">nav 1</a>
-		<a class="m-nav__item nav_type_selected">nav 2</a>
-	</nav>
+    <nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
+        <a class="m-nav__item">nav 1</a>
+        <a class="m-nav__item nav_type_selected">nav 2</a>
+    </nav>
 </section>
 ```
 
@@ -252,198 +263,104 @@ Element，依赖于块的元素，是用来标识一个元素的关键字也是�
 .m-nav__item { /*...*/ }
 ```
 
-## 4 命名词典
-module：
-```
-a - link (<a> tag)
-ac - action
-add - additional
-adv - advertise
-aft - after
-aux - auxillary
+#### 方式2：css modules/CSS in JS
 
-btn - button
+> 如果使用了CSS in JS或者css modules来指定Module的话，则可避免模块元素及修饰符的依赖式写法。（避免BEM写法）
 
-cat - catalog | category
-cnt - content | container
-cnts - contents
-col - column
+VueJS(vue-cli)可直接在style标签中设置module属性完成css module的设置（可见[文档](https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95)）
+ReactJS需要设置webpack配置文件中cssOptions参数的modules为true。
 
-dec - decorate
-def - default
-del - delete
-descr - description
-dm - delim
-doc - document
-dyn - dynamic
-
-el - element
-err - error
-ext - external
-
-f - footer
-fr - friend
-
-gen - general
-
-hl - highlight
-hv - hover
-hld - holder
-
-img - image
-itx - textarea
-
-
-lbl - label
-lk - link
-lr - layer
-
-mod - module | modifier
-
-n - name
-ntf - notification
-num - number
-
-opt - options
-ovr - overlay
-
-ph - placeholder
-pht - photo
-priv - privacy
-
-rfr - refresh
-
-scr - screen | scroll
-sel - select
-sett - settings
-sm - small
-spr - sprite
-
-tit - title
-
-wrap - wrapper
-```
-
-部分属性：
-```
-b - bottom
-bd - border
-bdc - border-color
-bdr - border-radius
-bg - background
-bgc - background-color
-bgi - background-image
-bgp - background-position
-bs - box-shadow
-
-c - clear
-cr - color
-
-f - float | front
-fs - font-size
-fw - font-weight
-
-h - height
-il - inline-block
-
-lh - line-height
-m - margin
-mb - margin-bottom
-ml - margin-left
-mr - margin-right
-mt - margin-top
-
-o - opacity
-ov - overflow
-
-p - padding | position
-per - %
-pb - padding-bottom
-pl - padding-left
-pr - padding-right
-pt - padding-top
-
-t - text-align
-ti - text-indent
-
-unl - underline
-v - vertical-align | visibility
-w - width
-
-```
-
-## 5 其他
-
-### 5.1 主流前端框架中的Component和Module
-在使用主流前端框架，如Vue，Module层可根据在路由views文件中各自定义；Component可在组件component中定义，易于区分和维护。可参考demo中mobileNavs.html。
-在使用主流前端框架，如Vue，Module层可根据在路由views中的vue文件中各自定义；Component可在组件components的vue文件中定义，易于区分和维护。
-
-#### SFC——Vue/Angular(1.x)
-如views/a.vue
+如：
 ``` vue
 <template>
-    <div class="m-a">...</div>
+    <section :class="$style.foot">
+        <p>
+            <img :class="$style.img" src="@/images/i-logo_b.png">
+        </p>
+        <p>@All right reserved | Design by <a href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
+    </section>
 </template>
-<style>
-    .m-a {}
+
+<style lang="less" module>
+    .foot {
+        line-height: 10vw;
+        word-break: keep-all;
+        white-space: nowrap;
+		
+		.img {
+			width: 10px;
+			height: 10px;
+		}
+    }
 </style>
+
 ```
 
-或直接使用css modules
+#### 结合其它层完成整个样式
 ``` vue
 <template>
-    <div :class="$style.a">...</div>
+    <section :class="[$style.foot, 'f-tc']">
+        <p class="u-pt80">
+            <img :class="[$style.img, 'g-mb20']" src="@/images/i-logo_b.png">
+        </p>
+        <p class="g-fs22 u-pb100" s-cr_sub>@All right reserved | Design by <a class="f-unl" s-cr_blue href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
+    </section>
 </template>
-<style module>
-    .a {}
-</style>	
-```
 
-components/b.vue
-``` vue
-<template>
-    <div class="u-a">...</div>
-</template>
-<style>
-    .u-a {}
+<style lang="less" module>
+    .foot {
+        line-height: 10vw;
+        word-break: keep-all;
+        white-space: nowrap;
+		
+		.img {
+			width: 10px;
+			height: 10px;
+		}
+    }
 </style>
+
 ```
 
+#### react 例子
+``` jsx
+import React, {Component} from 'react';
+import style from './index.scss'
+import classnames from 'classnames'
 
-#### css in js——React/Angular(2.x)
-
-### 5.2 关于预处理的mixins和skins
-mixins和skins通常在项目样式Base层，由于预处理定义的方法跟变量不会影响生成后的css体积，因此原则上是越精细越好。
-
-如mixins.less
-``` less
-// border-top 1px mobile
-.bdt1px(@color) {
-    position: relative
-    &:after {
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 1px;
-		-webkit-transform: scale(1, 0.5);
-		transform: scale(1, 0.5);
-		background-color: @color;
-	}
+export default class Footer extends Component {
+    render () {
+        return (
+            <footer className={classnames(style.foot, 'f-tc g-fs12 f-b_1px bt_1px g-mt60')} s-theme__foot="1">
+				<p class="u-pt80">
+					<img className={classnames(style.img, 'g-mb20')} src={require('@/images/i-logo_b.png')}>
+				</p>
+                MIT Licensed | Copyright © 2019-present MichealWayne
+            </footer>
+        )
+    }
 }
 ```
 
-module.less
-``` less
-	@import 'mixins.less';
-	.m-nav {
-		.m-nav__item {
-			.bdt1px(red);
-		}
+``` scss
+// index.scss
+.foot {
+    padding: 40px;
+	
+	.img {
+	    width: 10px;
+		height: 10px;
 	}
+}
+```
 ```
 
+## 4 命名词典以及moo-css-base查询词典
+[帮助：词典>>](http://blog.michealwayne.cn/Moo-CSS/docs/nameDictionary/#module命名词典)
 
-----------
+[更多详细内容请见文档>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
+
+----------------
 
 ## 反馈
 - [mail: michealwayne@163.com](mailto:michealwayne@163.com)

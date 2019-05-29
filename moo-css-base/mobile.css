@@ -230,7 +230,7 @@ body {
 /*------------------------------------*\
     Mobile status
 \*------------------------------------*/
-/* display原子样式 */
+/* display none */
 .z-hide {
   display: none !important;
 }
@@ -254,6 +254,7 @@ body {
 .z-hide_90 {
   opacity: 90;
 }
+/* z-axis index */
 .z-index_ {
   z-index: -1;
 }
@@ -605,10 +606,25 @@ body {
   background-color: #cf0e0f;
   color: #fff;
 }
+.u-btn[s-color="blue"],
+.u-btn_il[s-color="blue"] {
+  background-color: #01a2fc;
+  color: #01a2fc;
+}
 .u-btn[s-color="gray"],
 .u-btn_il[s-color="gray"] {
   background-color: #ccc;
   color: #fff;
+}
+.u-btn[s-color="bd_red"],
+.u-btn_il[s-color="bd_red"] {
+  border: thin solid #cf0e0f;
+  color: #cf0e0f;
+}
+.u-btn[s-color="bd_yellow"],
+.u-btn_il[s-color="bd_yellow"] {
+  border: thin solid #f1ae3f;
+  color: #f1ae3f;
 }
 .u-btn[s-color="bd_gray"],
 .u-btn_il[s-color="bd_gray"] {
@@ -662,11 +678,15 @@ body {
 /*------------------------------------*\
     Mobile function
 \*------------------------------------*/
-/* 清除webkit默认样式 */
+/* remove webkit default */
 .f-wk_reset {
   -webkit-appearance: none;
 }
-/* 背景图拉伸 */
+/* tap transparent */
+.f-tap_reset {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* background image stretch */
 .f-bg_cover,
 [f-bg_cover] {
   background-repeat: no-repeat;
@@ -680,18 +700,18 @@ body {
 .f-scroll_y {
   overflow-y: auto;
 }
-/* 溢出... */
+/* overflow show '...' */
 .f-ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/* 多列等高 */
+/* multiseriate line equal height */
 .f-equal {
   margin-bottom: -9999px;
   padding-bottom: 9999px;
 }
-/* 文字对齐 */
+/* text align */
 .f-tl {
   text-align: left;
 }
@@ -715,7 +735,7 @@ body {
 .f-vb {
   vertical-align: bottom;
 }
-/* 浮动 */
+/* float */
 .f-fl {
   float: left;
   display: inline;
@@ -733,26 +753,26 @@ body {
 .f-cr {
   clear: right;
 }
-/* 文字不换行 */
+/* no line-break */
 .f-nowrap {
   white-space: nowrap;
 }
-/* 文字粗细 */
+/* font weight */
 .f-normal {
   font-weight: normal;
 }
 .f-bold {
   font-weight: bold;
 }
-/* 首行缩进2个字符 */
+/* indentation 2 words */
 .f-ti2 {
   text-indent: 2em;
 }
-/* 斜体 */
+/* italic */
 .f-ft_italic {
   font-style: italic;
 }
-/* 下划线 */
+/* underline */
 .f-unl {
   text-decoration: underline;
 }
@@ -769,13 +789,19 @@ body {
 /* 字体大小、行高 */
 /* 字体大小，颜色 */
 /* 多行文字溢出... */
-/* 伪类布局 */
+/* 伪元素布局 */
 /* 使用DIN字体 */
 /* position top、left */
 /* 背景图片地址和大小 */
+/* 模糊 */
 /* 定位上下左右居中 */
 /* fixed mask */
 /* 单边 border-radius */
+/* 设置弹性滚动(ios) */
+.set-scroll-elastic {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
 /* 改变滚动条颜色，需要hsl颜色，如.setScroll(hsla(200, 100%, 54%, 1)); */
 /**
  * grid
@@ -880,7 +906,7 @@ body {
 .g-m50 {
   margin: 6.6667vw;
 }
-/* 边距 */
+/* margin */
 /* margin-top, margin-left, margin-bottom: 10px ~ 100px, in units of 10px */
 .g-mt10 {
   margin-top: 1.3333vw;
@@ -1062,9 +1088,21 @@ body {
   background-color: #cf0e0f;
   color: #fff;
 }
+.s-btn[s-color="blue"] {
+  background-color: #01a2fc;
+  color: #01a2fc;
+}
 .s-btn[s-color="gray"] {
   background-color: #ccc;
   color: #fff;
+}
+.s-btn[s-color="bd_red"] {
+  border: thin solid #cf0e0f;
+  color: #cf0e0f;
+}
+.s-btn[s-color="bd_yellow"] {
+  border: thin solid #f1ae3f;
+  color: #f1ae3f;
 }
 .s-btn[s-color="bd_gray"] {
   border: thin solid #999;

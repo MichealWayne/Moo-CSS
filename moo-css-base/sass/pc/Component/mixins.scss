@@ -119,6 +119,8 @@
 /* 禁止文字选中 */
 @mixin no-select () {
   -webkit-user-select: none;
+      -moz-user-select:none;
+	   -ms-user-select:none;
           user-select: none;
 }
 
@@ -142,6 +144,8 @@
 /* 模糊 */
 @mixin blur ($range) {
   -webkit-filter: blur($range);
+  	 -moz-filter: blur($range);
+      -ms-filter: blur($range); 
           filter: blur($range);
 }
 /* 定位上下左右居中 */

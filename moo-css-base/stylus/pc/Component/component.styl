@@ -1,18 +1,18 @@
-/*
-* PC
-* components
-*/
+/*------------------------------------*\
+    PC Component
+\*------------------------------------*/
+
 @import '../Skin/colors.styl'
 @import '../Skin/skins.styl'
 
-// border radius
+/* border radius */
 .f-bdr10
 	border-radius 5px
 	
 .f-bdr8
 	border-radius 4px
 	
-// icon
+/* icon */
 .u-block
 .u-icon
 em.u-icon
@@ -36,7 +36,7 @@ em.u-icon_il
 		content ''
 		
 
-// "border" 1px
+/* "border" 1px */
 .f-b_1px
 	position relative
 	
@@ -74,20 +74,20 @@ em.u-icon_il
 	right 0
 	
 
-// buttons
+/* buttons */
 .u-btn
 .u-btn_il
 	padding 0
 	text-align center
 	cursor pointer
 	border-radius 4px
-	@extend .s-btn
+	s-btn()
 	&[no-bdr]
 		border-radius 0
 		
 
-// window
-.m-win_bg
+/* window */
+.u-mask
 	position fixed
 	z-index 18
 	top 0
@@ -95,10 +95,10 @@ em.u-icon_il
 	left 0
 	right 0
 	width 100%
-	
-.m-win_bg
 	background-color rgba(0, 0, 0, 0.3)
 	
-.m-win
+
+.u-dialog
+.u-win
 	position fixed
 	z-index 19

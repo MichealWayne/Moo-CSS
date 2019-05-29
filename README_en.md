@@ -136,16 +136,14 @@ npm i -D moo-css-base
 ``` stylus
 @import '~moo-css-base/mobileColors.less';	// import stylus mobile colors
 
-.u-error {
+.u-error
     color: $red;
-}
 ```
 
 ``` stylus
-@import '~moo-css-base/mobileColors.less';	// import stylus pc colors
+@import '~moo-css-base/pcColors.less';	// import stylus pc colors
 
-.u-error {
+.u-error
     color: $blue;
-}
 ```
 
