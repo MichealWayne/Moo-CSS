@@ -1,6 +1,6 @@
 {
   "name": "moo-css-base",
-  "version": "0.3.1",
+  "version": "0.9.0",
   "description": "Moo-CSS Base layer.",
   "main": "index.js",
   "scripts": {

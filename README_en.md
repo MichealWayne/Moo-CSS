@@ -1,6 +1,6 @@
 # Moo-css
 
-Base Layer, global styles.
+Base Layer, global styles.[Document>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -137,13 +137,13 @@ npm i -D moo-css-base
 @import '~moo-css-base/mobileColors.less';	// import stylus mobile colors
 
 .u-error
-    color: $red;
+    color $red
 ```
 
 ``` stylus
 @import '~moo-css-base/pcColors.less';	// import stylus pc colors
 
 .u-error
-    color: $blue;
+    color $blue
 ```
 

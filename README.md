@@ -1,4 +1,5 @@
 # Moo-CSS 模块化面向对象的css写法规则策略
+[文档地址](http://blog.michealwayne.cn/Moo-CSS/docs/)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -28,7 +29,8 @@ Moo-CSS
 
 ## guide
 ![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
-- [文档地址](http://blog.michealwayne.cn/Moo-CSS/docs/)
+
+
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
