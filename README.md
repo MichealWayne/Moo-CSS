@@ -338,7 +338,7 @@ export default class Footer extends Component {
 	}
 }
 ```
-```
+
 
 ## 4 命名词典以及moo-css-base查询词典
 - [帮助：词典>>](http://blog.michealwayne.cn/Moo-CSS/docs/nameDictionary/#module命名词典)
