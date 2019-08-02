@@ -29,6 +29,11 @@ Moo-CSS
 └─demo      // demos
 ```
 
+## guide
+![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
+
+- [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
+- demo url: [Mobile web](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC web](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
 
 ## install
 ``` sh

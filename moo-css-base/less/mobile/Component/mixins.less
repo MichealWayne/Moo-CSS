@@ -9,7 +9,7 @@
     @{name}: unit(round((percentage(@px)/100/@vw), @vwkeep), vw);
 }
 
-/*width height*/
+/* width height */
 .wh(@width: 100%; @height) {
     width: @width;
     height: @height;
@@ -121,7 +121,7 @@
 }
 
 /* 设置弹性滚动(ios) */
-.set-scroll-elastic {
+.set-scroll-elastic() {
 	-webkit-overflow-scrolling: touch;
 	overflow-y: scroll;
 }

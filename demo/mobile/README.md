@@ -9,6 +9,6 @@ npm run start
 ```
 
 ## visit
-- [home page(Zepto)](http://localhost:3000/mobileIndex.html)
-- [tab page(VueJS)](http://localhost:3000/mobileNavs.html)
+- [home page(Zepto)](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html)
+- [tab page(VueJS)](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileNavs.html)
 

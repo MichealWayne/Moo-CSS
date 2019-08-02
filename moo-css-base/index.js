@@ -2,7 +2,7 @@
 
 /**
  * Moo-CSS Base
- * 默认引入less/mobile/base
+ * define require 'less/mobile/base.less'
  */
 
-require('./mobile.less')
+require('./mobile.less');
