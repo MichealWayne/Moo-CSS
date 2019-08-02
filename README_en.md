@@ -4,7 +4,7 @@ Base Layer, global styles.[Document>>](http://blog.michealwayne.cn/Moo-CSS/docs/
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
-    <img alt="antd-admin" height="150" src="./docs/logo.png">
+    <img alt="Moo-CSS" height="150" src="./docs/logo.png">
   </a>
 </p>
 
