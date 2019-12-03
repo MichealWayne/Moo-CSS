@@ -32,6 +32,9 @@ Moo-CSS
 
 
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
+- [moo-css-base vscode插件](./moo-css-plugin.vsix)
+- [moo-css-base 检索数据](https://github.com/MichealWayne/fe-tools/blob/master/datas/moo-css.json)
+- [moo-css fe-tools](https://github.com/MichealWayne/fe-tools)
 - demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
 

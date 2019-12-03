@@ -33,6 +33,9 @@ Moo-CSS
 ![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
 
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
+- [moo-css-base search data](https://github.com/MichealWayne/fe-tools/blob/master/datas/moo-css.json)
+- [moo-css-base vscode plugin](./moo-css-plugin.vsix)
+- [moo-css fe-tools](https://github.com/MichealWayne/fe-tools)
 - demo url: [Mobile web](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC web](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
 
 ## install
