@@ -118,3 +118,14 @@
 .f-unl_none {
     text-decoration: none;
 }
+
+/* point event */
+.f-event_none {
+    pointer-events: none;
+}
+
+/* inline warp */
+.f-inline_wrap::after {
+    content: "\A";
+    white-space: pre;
+}

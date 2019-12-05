@@ -1,6 +1,6 @@
 # Moo-css
 
-Base Layer, global styles.[Document>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
+Base Layer, global styles.[Document>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [中文>>](./README.md)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -8,7 +8,7 @@ Base Layer, global styles.[Document>>](http://blog.michealwayne.cn/Moo-CSS/docs/
   </a>
 </p>
 
-- [中文](./README.md)
+
 - keys: modularization + object-oriented
 - advantage:
 	- reusability

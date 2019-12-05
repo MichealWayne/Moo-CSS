@@ -1,5 +1,6 @@
 # Moo-CSS 模块化面向对象的css写法规则策略
-[文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
+
+[文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -7,7 +8,6 @@
   </a>
 </p>
 
-- [English](./README_en.md)
 - 核心：组件模块化+面向对象。
 - 优点：
 	- 重用性强
@@ -29,7 +29,6 @@ Moo-CSS
 
 ## guide
 ![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
-
 
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - [moo-css-base vscode插件](./moo-css-plugin.vsix)
@@ -348,12 +347,6 @@ export default class Footer extends Component {
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 
 [更多详细内容请见文档>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
-
-## 5 系列文章
-- [(一)：致敬OOCSS、BEM、SMACSS、ACSS、ITCSS...css modules、CSS in JS](https://blog.csdn.net/qq_24357165/article/details/90695277)
-- [(二)：Moo，模块与面向对象](https://blog.csdn.net/qq_24357165/article/details/90695635)
-- [(三)：Base层的划分以及moo-css-base](https://blog.csdn.net/qq_24357165/article/details/90700803)
-- [(四)：Moo-CSS的选择器命名规范](https://blog.csdn.net/qq_24357165/article/details/90701291)
 
 
 ----------------
