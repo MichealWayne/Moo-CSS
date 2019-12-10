@@ -1,6 +1,6 @@
-# Moo-CSS 模块化面向对象的css写法规则策略
+# Moo-CSS
 
-[文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
+模块化面向对象的css写法规则策略Moo-CSS, 通用样式库moo-css-base。[文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
