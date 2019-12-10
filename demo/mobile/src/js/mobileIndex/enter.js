@@ -43,7 +43,7 @@ $(() => {
 
     // to home page
     $('.j-to_home').click(() => {
-        location.href = 'https://github.com/MichealWayne/Moo-CSS'
+        location.href = 'https://github.com/MichealWayne/Moo-CSS/'
     });
 
     // show tip

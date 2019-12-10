@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // css in js
@@ -10,13 +10,10 @@ const FooterStyle = styled.footer`
 /**
  * 页面底部
  */
-export default class Footer extends Component {
-
-    render () {
-        return (
+export default function Footer (props) {
+    return (
 		<FooterStyle className="f-tc g-fs12 f-b_1px bt_1px g-mt60">
             MIT Licensed | Copyright © 2019-present MichealWayne
 		</FooterStyle>
-        )
-    }
+    )
 }

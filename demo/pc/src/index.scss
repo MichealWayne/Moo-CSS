@@ -1,13 +1,17 @@
 /**
  * PC Demo
+ * entery style
  */
 @import '~moo-css-base/pc.scss';
-@import './scss/component.scss';
-@import './scss/skin.scss';
+
+:global {
+	@import './scss/component.scss';
+	@import './scss/skin.scss';
 
 
-body {
-    padding-top: 60px;
-    line-height: 1.5;
-    font-size: 14px;
+	body {
+		padding-top: 60px;
+		line-height: 1.5;
+		font-size: 14px;
+	}
 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import style from './index.scss'
 import classnames from 'classnames'
 
@@ -6,9 +6,7 @@ import classnames from 'classnames'
 /**
  * 主要内容
  */
-export default class Home extends Component {
-
-    render () {
+export default function Home () {
         return (
             <section className={classnames(style['m-home'])} s-theme__home="1">
                 <div className={classnames(style['m-title'], 'f-tc')}>
@@ -52,5 +50,4 @@ export default class Home extends Component {
                 </div>
             </section>
         )
-    }
 }

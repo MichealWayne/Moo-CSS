@@ -1,6 +1,6 @@
 # Moo-CSS
 
-模块化面向对象的css写法规则策略Moo-CSS, 通用样式库moo-css-base。[文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
+模块化面向对象的css写法规则策略Moo-CSS, 以及通用Base层样式库moo-css-base。[Moo-CSS文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -141,11 +141,11 @@ Moo-CSS所说的多态一方面是指对应平台的多态样式/方法。比如
 
 className或attribute的写法为：
 ```
-标志前缀-className/attribute_字母值
+prefix-className/attribute_字母值
 ``` 
 或
 ``` 
-标志前缀-className/attribute数字值
+prefix-className/attribute数字值
 ```
 
 ### 基本规则
@@ -156,7 +156,7 @@ className或attribute的写法为：
 
 
 
-其中标志前缀由样式模块确认：
+其中标志前缀prefix由样式模块确认：
 - `g-`：grid
 - `f-`: function
 - `u-`: unit、Component unit
@@ -347,6 +347,20 @@ export default class Footer extends Component {
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 
 [更多详细内容请见文档>>](http://blog.michealwayne.cn/Moo-CSS/docs/)
+
+
+----------------
+
+## 5 moo-css-base
+moo-css-base为本人从团队多年项目中抽离的公用CSS样式/方法库，遵守Moo-CSS规范，作为页面样式的Base层在全局使用。
+
+- 功能：浏览器默认样式reset、提供常用原子样式、组件样式基础、颜色变量及常用mixins方法库。
+- 兼容：移动端安卓4.4及以上/ios8.1及以上；PC除flex外兼容IE6。
+- 体积：其css压缩版本大小（gizp）为移动端3.5k、PC端4.2k。
+- 预处理支持情况：less/sass/stylus。
+- moo-css-base可直接在项目中按需引用，或者可以作为Base层的划分参考。
+
+具体使用和介绍请前往[Moo-CSS moo-css-base](http://blog.michealwayne.cn/Moo-CSS/docs/baseLayer/#moo-css-base)
 
 
 ----------------

@@ -9,4 +9,4 @@ npm run start
 ```
 
 ## visit
-- [home page](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/pcIndex.html)
+- [home page](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)
