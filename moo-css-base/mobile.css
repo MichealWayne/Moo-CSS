@@ -1,7 +1,7 @@
 /*------------------------------------*\
     Moo-CSS 
     Mobile Base
-    @version: 0.9.2
+    @version: 0.9.4
     @github: https://github.com/MichealWayne/Moo-CSS
 \*------------------------------------*/
 /**
@@ -604,13 +604,13 @@ body {
 }
 .u-btn[s-color="red"],
 .u-btn_il[s-color="red"] {
-  background-color: #cf0e0f;
+  background-color: #fe5d4e;
   color: #fff;
 }
 .u-btn[s-color="blue"],
 .u-btn_il[s-color="blue"] {
   background-color: #01a2fc;
-  color: #01a2fc;
+  color: #fff;
 }
 .u-btn[s-color="gray"],
 .u-btn_il[s-color="gray"] {
@@ -619,8 +619,8 @@ body {
 }
 .u-btn[s-color="bd_red"],
 .u-btn_il[s-color="bd_red"] {
-  border: thin solid #cf0e0f;
-  color: #cf0e0f;
+  border: thin solid #fe5d4e;
+  color: #fe5d4e;
 }
 .u-btn[s-color="bd_yellow"],
 .u-btn_il[s-color="bd_yellow"] {
@@ -687,6 +687,11 @@ body {
 .f-tap_reset {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+/* no select */
+.f-noselct {
+  -webkit-user-select: none;
+  user-select: none;
+}
 /* background image stretch */
 .f-bg_cover,
 [f-bg_cover] {
@@ -739,11 +744,9 @@ body {
 /* float */
 .f-fl {
   float: left;
-  display: inline;
 }
 .f-fr {
   float: right;
-  display: inline;
 }
 .f-cb {
   clear: both;
@@ -780,11 +783,20 @@ body {
 .f-unl_none {
   text-decoration: none;
 }
+/* point event */
+.f-event_none {
+  pointer-events: none;
+}
+/* inline warp */
+.f-inline_wrap::after {
+  content: "\A";
+  white-space: pre;
+}
 /*------------------------------------*\
     Mobile mixins
 \*------------------------------------*/
 /* vw */
-/*width height*/
+/* width height */
 /* square */
 /* height = line-height */
 /* 字体大小、行高 */
@@ -799,10 +811,6 @@ body {
 /* fixed mask */
 /* 单边 border-radius */
 /* 设置弹性滚动(ios) */
-.set-scroll-elastic {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-}
 /* 改变滚动条颜色，需要hsl颜色，如.setScroll(hsla(200, 100%, 54%, 1)); */
 /**
  * grid
@@ -1030,98 +1038,63 @@ body {
 /* 灰色 */
 /* 浅灰色 */
 /* 白色 */
-/*
-* Mobile
-* skins
-*/
+/*------------------------------------*\
+    Mobile skins
+    v1.x will abandon [s-cr_{type}]
+\*------------------------------------*/
 /* font color */
-[s-cr_red] {
+[s-cr_red],
+[s-cr="red"] {
   color: #fe5d4e;
 }
-[s-cr_green] {
+[s-cr_green],
+[s-cr="green"] {
   color: #009801;
 }
-[s-cr_blue] {
+[s-cr_blue],
+[s-cr="blue"] {
   color: #01a2fc;
 }
-[s-ft_base] {
+[s-ft_base],
+[s-cr="base"] {
   color: #323232;
 }
-[s-ft_base_] {
+[s-ft_base_],
+[s-cr="base_"] {
   color: #333;
 }
-[s-ft_sub] {
+[s-ft_sub],
+[s-cr="sub"] {
   color: #666;
 }
 [s-ft_sub_],
-[s-cr_gray] {
+[s-cr_gray],
+[s-cr="gray"] {
   color: #999;
 }
-[s-cr_white] {
+[s-cr_white],
+[s-cr="white"] {
   color: #fff;
 }
 /* background color */
-[s-bgc_red] {
+[s-bgc_red],
+[s-bgc="red"] {
   background-color: #fe5d4e;
 }
-[s-bgc_green] {
+[s-bgc_green],
+[s-bgc="green"] {
   background-color: #009801;
 }
-[s-bgc_blue] {
+[s-bgc_blue],
+[s-bgc="blue"] {
   background-color: #01a2fc;
 }
-[s-bgc_gray] {
+[s-bgc_gray],
+[s-bgc="gray"] {
   background-color: #999;
 }
-[s-bgc_white] {
+[s-bgc_white],
+[s-bgc="white"] {
   background-color: #fff;
 }
 /* button color */
-.s-btn[s-color="yellow"] {
-  background-color: #f1ae3f;
-  color: #fff;
-}
-.s-btn[s-color="orange"] {
-  background-color: #ff7010;
-  color: #fff;
-}
-.s-btn[s-color="red"] {
-  background-color: #cf0e0f;
-  color: #fff;
-}
-.s-btn[s-color="blue"] {
-  background-color: #01a2fc;
-  color: #01a2fc;
-}
-.s-btn[s-color="gray"] {
-  background-color: #ccc;
-  color: #fff;
-}
-.s-btn[s-color="bd_red"] {
-  border: thin solid #cf0e0f;
-  color: #cf0e0f;
-}
-.s-btn[s-color="bd_yellow"] {
-  border: thin solid #f1ae3f;
-  color: #f1ae3f;
-}
-.s-btn[s-color="bd_gray"] {
-  border: thin solid #999;
-  color: #999;
-}
-.s-btn[s-color="bd_white"] {
-  border: thin solid #fff;
-  color: #fff;
-}
-.s-btn[s-size="small"] {
-  line-height: 26px;
-  font-size: 12px;
-}
-.s-btn[s-size="medium"] {
-  line-height: 42px;
-  font-size: 16px;
-}
-.s-btn[s-size="big"] {
-  line-height: 50px;
-  font-size: 17px;
-}

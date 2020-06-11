@@ -11,6 +11,12 @@
     text-decoration: none;
 }
 
+/* no select */
+.f-noselct {
+    -webkit-user-select: none;
+            user-select: none;
+}
+
 /* clear webkit appearance */
 .f-wk_reset {
     -webkit-appearance: none;
@@ -86,11 +92,9 @@
 
 /* float */
 .f-fl {
-    float: left;
     display: inline;
 }
 .f-fr {
-    float: right;
     display: inline;
 }
 .f-cb {

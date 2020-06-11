@@ -1,6 +1,6 @@
 # Moo-CSS
 
-模块化面向对象的css写法规则策略Moo-CSS, 以及通用Base层样式库moo-css-base。[Moo-CSS文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)
+以样式自动化为目标，模块化面向对象的css写法规则策略Moo-CSS, 以及通用Base层样式库moo-css-base。[Moo-CSS文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)，[Moo-CSS生态（建设中）>>](https://github.com/MichealWayne/moo-css-plugins)
 
 <p align="center">
   <a href="http://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -30,12 +30,27 @@ Moo-CSS
 ## guide
 ![Moo-CSS structure](http://blog.michealwayne.cn/images/notes/oocss/p-part.jpg)
 
+### moo-css-base
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
 - [moo-css-base vscode插件](./moo-css-plugin.vsix)
 - [moo-css-base 检索数据](https://github.com/MichealWayne/fe-tools/blob/master/datas/moo-css.json)
 - [moo-css fe-tools](https://github.com/MichealWayne/fe-tools)
-- demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
+- moo-css-base demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
  移动端demo建议调成手机模式在开发者模式中查看。
+ 
+### moo-css-transformer(test)
+css代码/moo-css选择器的相互转换
+- [仓库地址](https://github.com/MichealWayne/moo-css-plugins/tree/master/moo-css-transformer)
+
+### moo-css-web(test)
+虚拟dom -> 符合moo-css规范的web代码
+- [仓库地址](https://github.com/MichealWayne/moo-css-plugins/tree/master/moo-css-web)
+
+### moo-css-weapp(todo)
+虚拟dom -> 符合moo-css规范的小程序代码
+
+### moo-css-sketch(todo)
+sketch -> web/weapp
 
 ----------
 
