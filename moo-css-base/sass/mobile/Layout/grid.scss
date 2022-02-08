@@ -10,20 +10,20 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.g-box_c{
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+.g-box_c {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* center */
-.g-center{
-    margin-left: auto;
-    margin-right: auto;
+.g-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* position */
 .g-pf {
-    position: fixed;
+  position: fixed;
 }
 .g-pr {
   position: relative;
@@ -34,13 +34,14 @@
 }
 
 /* calculate font-size line-height */
-@mixin g-calculate-font($start,$end,$interval:2) { //
+@mixin g-calculate-font($start, $end, $interval: 2) {
+  //
   $i: $start;
   @while ($i <= $end) {
     .g-fs#{$i} {
       font-size: unit($i);
     }
-    $i: $i + $interval
+    $i: $i + $interval;
   }
 }
 
@@ -59,7 +60,7 @@
 }
 
 /* calculate margin */
-@mixin g-calculate-margin($start, $end ,$interval:5) {
+@mixin g-calculate-margin($start, $end, $interval: 5) {
   $i: $start;
   @while ($i <= $end) {
     .g-m#{$i} {
@@ -77,8 +78,8 @@
     .g-mb#{$i} {
       margin-bottom: unit($i);
     }
-    $i: $i + $interval
+    $i: $i + $interval;
   }
 }
 
-@include g-calculate-margin(5, 100, 5)
+@include g-calculate-margin(5, 100, 5);

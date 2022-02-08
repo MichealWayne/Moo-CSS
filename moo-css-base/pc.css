@@ -1,7 +1,7 @@
 /*------------------------------------*\
     Moo-CSS 
     PC Base
-    @version: 0.9.4
+    @version: 0.9.5
     @github: https://github.com/MichealWayne/Moo-CSS
 \*------------------------------------*/
 /**
@@ -935,7 +935,7 @@ input[type="search"]::-webkit-search-decoration {
   overflow-y: auto;
 }
 /* no select */
-.f-noselct {
+.f-no_select {
   -webkit-user-select: none;
   user-select: none;
 }

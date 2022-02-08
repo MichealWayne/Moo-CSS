@@ -2,8 +2,8 @@
     PC component
 \*------------------------------------*/
 
-@import "../Skin/colors";
-@import "../Skin/skins";
+@import '../Skin/colors';
+@import '../Skin/skins';
 
 /* border radius */
 .f-bdr10 {
@@ -15,14 +15,14 @@
 }
 
 /* icon */
-.u-block, 
-.u-icon, 
+.u-block,
+.u-icon,
 .u-btn {
   display: block;
 }
 
-.u-block_il, 
-.u-icon_il, 
+.u-block_il,
+.u-icon_il,
 .u-btn_il {
   display: inline-block;
 }
@@ -33,7 +33,7 @@
 
 .f-pclass {
   position: relative;
-  &:before, 
+  &:before,
   &:after {
     position: absolute;
     content: '';
@@ -43,7 +43,7 @@
 /* border 1px */
 .f-b_1px {
   border-color: $border-gray;
-  border-width: 1px
+  border-width: 1px;
 }
 
 .bb_1px {
@@ -59,9 +59,9 @@
   border-top-style: solid;
 }
 
-
 /* buttons */
-.u-btn, .u-btn_il {
+.u-btn,
+.u-btn_il {
   padding: 0;
   text-align: center;
   cursor: pointer;
@@ -83,7 +83,6 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 .u-win,
 .u-dialog {

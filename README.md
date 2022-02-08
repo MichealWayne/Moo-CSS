@@ -28,9 +28,10 @@ Moo-CSS
 ```
 
 ## milestones
-- 2021.6(plan)：webpack/snowpack插件；可视化sketch2code lowcode；
+- 2021.12: moo-css-base、moo-css-transformer优化；
+- 2021.06：webpack/snowpack插件；可视化sketch2code lowcode；
 - 2020.12: sketch2code转换服务；
-- 2020.6: 生态插件(Chrome插件，VSCode插件)；
+- 2020.06: 生态插件(Chrome插件，VSCode插件)；
 - 2019.12: Moo-CSS写法策略及moo-css-base。
 
 ## guide

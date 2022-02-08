@@ -2,14 +2,13 @@
     Mobile unit
 \*------------------------------------*/
 
-
 @import '../Component/mixins';
 @import '../Base/sizes';
 
 /* width */
 .u-w {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 /* padding right */
@@ -29,11 +28,11 @@
 }
 
 /* calculate width height padding */
-@mixin u-calculate-gwh($value,$interval:5) {
+@mixin u-calculate-gwh($value, $interval: 5) {
   $i: $interval;
   @while ($i <= $value) {
     .u-p#{$i} {
-      padding: unit($i)
+      padding: unit($i);
     }
     .u-pr#{$i} {
       padding-right: unit($i);
@@ -51,13 +50,13 @@
       width: unit($i);
     }
     .u-h#{$i} {
-      height: unit($i)
+      height: unit($i);
     }
     $i: $i + $interval;
   }
 }
 
-@include u-calculate-gwh(100, 5)
+@include u-calculate-gwh(100, 5);
 
 /* special width and height */
 .u-w150 {
@@ -70,7 +69,7 @@
 
 /* height */
 .u-h {
-    height: 100%;
+  height: 100%;
 }
 .u-h150 {
   height: $s150;

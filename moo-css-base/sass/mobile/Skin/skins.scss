@@ -8,106 +8,106 @@
 
 /* font color */
 [s-cr_red],
-[s-cr="red"] {
-    color: $red;
+[s-cr='red'] {
+  color: $red;
 }
 [s-cr_green],
-[s-cr="green"] {
-    color: $green;
+[s-cr='green'] {
+  color: $green;
 }
 [s-cr_blue],
-[s-cr="blue"] {
-    color: $blue;
+[s-cr='blue'] {
+  color: $blue;
 }
 [s-ft_base],
-[s-cr="base"] {
-    color: $font-base;
+[s-cr='base'] {
+  color: $font-base;
 }
 [s-ft_base_],
-[s-cr="base_"]{
-    color: $font-base_;
+[s-cr='base_'] {
+  color: $font-base_;
 }
 [s-ft_sub],
-[s-cr="sub"] {
-    color: $font-sub;
+[s-cr='sub'] {
+  color: $font-sub;
 }
-[s-ft_sub_], 
+[s-ft_sub_],
 [s-cr_gray],
-[s-cr="gray"] {
-    color: $font-sub_;
+[s-cr='gray'] {
+  color: $font-sub_;
 }
 [s-cr_white],
-[s-cr="white"] {
-    color: $white;
+[s-cr='white'] {
+  color: $white;
 }
 
 /* background color */
 [s-bgc_red],
-[s-bgc="red"] {
-    background-color: $red;
+[s-bgc='red'] {
+  background-color: $red;
 }
 [s-bgc_green],
-[s-bgc="green"] {
-    background-color: $green;
+[s-bgc='green'] {
+  background-color: $green;
 }
 [s-bgc_blue],
-[s-bgc="blue"] {
-    background-color: $blue;
+[s-bgc='blue'] {
+  background-color: $blue;
 }
 [s-bgc_gray],
-[s-bgc="gray"] {
-    background-color: $font-sub_;
+[s-bgc='gray'] {
+  background-color: $font-sub_;
 }
 [s-bgc_white],
-[s-bgc="white"] {
-    background-color: $white;
+[s-bgc='white'] {
+  background-color: $white;
 }
 
 /* button color */
 @mixin s-btn {
-    &[s-color="yellow"] {
-        background-color: $button-yellow;
-        color: $white;
-    }
-    &[s-color="orange"] {
-        background-color: $button-orange;
-        color: $white;
-    }
-    &[s-color="red"] {
-        background-color: $button-red;
-        color: $white;
-    }
-    &[s-color="gray"] {
-        background-color: $button-gray;
-        color: $white;
-    }
-    &[s-color="bd_gray"] {
-        border: thin solid $font-sub_;
-        color: $font-sub_;
-    }
-    &[s-color="bd_white"] {
-        border: thin solid $white;
-        color: $white;
-    }
-	&[s-color="bd_red"] {
-        border: thin solid $button-red;
-        color: $button-red;
-    }
-	&[s-color="bd_yellow"] {
-        border: thin solid $button-yellow;
-        color: $button-yellow;
-    }
+  &[s-color='yellow'] {
+    background-color: $button-yellow;
+    color: $white;
+  }
+  &[s-color='orange'] {
+    background-color: $button-orange;
+    color: $white;
+  }
+  &[s-color='red'] {
+    background-color: $button-red;
+    color: $white;
+  }
+  &[s-color='gray'] {
+    background-color: $button-gray;
+    color: $white;
+  }
+  &[s-color='bd_gray'] {
+    border: thin solid $font-sub_;
+    color: $font-sub_;
+  }
+  &[s-color='bd_white'] {
+    border: thin solid $white;
+    color: $white;
+  }
+  &[s-color='bd_red'] {
+    border: thin solid $button-red;
+    color: $button-red;
+  }
+  &[s-color='bd_yellow'] {
+    border: thin solid $button-yellow;
+    color: $button-yellow;
+  }
 
-    &[s-size="small"] {
-        line-height: 26px;
-        font-size: 12px;
-    }
-    &[s-size="medium"] {
-        line-height: 42px;
-        font-size: 16px;
-    }
-    &[s-size="big"] {
-        line-height: 50px;
-        font-size: 17px;
-    }
+  &[s-size='small'] {
+    line-height: 26px;
+    font-size: 12px;
+  }
+  &[s-size='medium'] {
+    line-height: 42px;
+    font-size: 16px;
+  }
+  &[s-size='big'] {
+    line-height: 50px;
+    font-size: 17px;
+  }
 }

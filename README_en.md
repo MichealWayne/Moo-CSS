@@ -40,7 +40,7 @@ Moo-CSS
 
 ## install
 ``` sh
-npm i -D moo-css-base
+npm i --save moo-css-base
 ```
 
 ## use

@@ -6,82 +6,81 @@
 @import '../Base/sizes.less';
 
 /* box-sizing */
-.g-box_b{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+.g-box_b {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.g-box_c{
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+.g-box_c {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* center */
-.g-center{
-    margin-left: auto;
-    margin-right: auto;
+.g-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* position */
 .g-pf {
-    position: fixed;
+  position: fixed;
 }
 .g-pr {
-    position: relative;
+  position: relative;
 }
 .g-pa {
-    position: absolute;
+  position: absolute;
 }
 
 /* font size */
 .g-fs(@n, @i: 1) when (@i <= @n) {
-    .g-fs@{i} {
-        .unit(font-size, @i);
-    }
-    .g-fs(@n, (@i + 2));
+  .g-fs@{i} {
+    .unit(font-size, @i);
+  }
+  .g-fs(@n, (@i + 2));
 }
 /* 10px ~ 40px, in units of 2px */
-.g-fs(40, 10);      
-
+.g-fs(40, 10);
 
 /* line height */
 .g-lh150per {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 .g-lh180per {
-    line-height: 1.8;
+  line-height: 1.8;
 }
 .g-lh200per {
-    line-height: 2;
+  line-height: 2;
 }
 
 /* margin */
 .g-m20 {
-    .unit(margin, 20);
+  .unit(margin, 20);
 }
 .g-m30 {
-    .unit(margin, 30);
+  .unit(margin, 30);
 }
 .g-m40 {
-    .unit(margin, 40);
+  .unit(margin, 40);
 }
 .g-m50 {
-    .unit(margin, 50);
+  .unit(margin, 50);
 }
 
 /* margin */
 .g-m(@n, @i: 10) when (@i <= @n) {
-    .g-mt@{i} {
-        .unit(margin-top, @i);
-    }
-    .g-mb@{i} {
-        .unit(margin-bottom, @i);
-    }
-    .g-ml@{i} {
-        .unit(margin-left, @i);
-    }
+  .g-mt@{i} {
+    .unit(margin-top, @i);
+  }
+  .g-mb@{i} {
+    .unit(margin-bottom, @i);
+  }
+  .g-ml@{i} {
+    .unit(margin-left, @i);
+  }
 
-    .g-m(@n, (@i + 10))
+  .g-m(@n, (@i + 10));
 }
 
 /* margin-top, margin-left, margin-bottom: 10px ~ 100px, in units of 10px */
-.g-m(100);  
+.g-m(100);

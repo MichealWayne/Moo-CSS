@@ -2,11 +2,9 @@
     Mobile component
 \*------------------------------------*/
 
-
 @import '../Skin/colors';
 @import '../Skin/skins';
 @import './mixins';
-
 
 /* border radius */
 .f-bdr10 {
@@ -18,30 +16,30 @@
 }
 
 /* icon */
-.u-block, 
-.u-icon, 
+.u-block,
+.u-icon,
 .u-btn {
-    display: block;
+  display: block;
 }
 
-.u-block_il, 
-.u-icon_il, 
+.u-block_il,
+.u-icon_il,
 .u-btn_il {
-    display: inline-block;
+  display: inline-block;
 }
 .u-inline {
-    display: inline;
+  display: inline;
 }
 
 /* set Pseudo class */
 .f-pclass {
-    position: relative;
+  position: relative;
 
-    &:before,
-    &:after {
-        position: absolute;
-        content: '';
-    }
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
 }
 
 /* retina screen border 1px */
@@ -56,38 +54,38 @@
 
 .bb_1px:after,
 .bt_1px:after {
-    left: 0;
-    width: 100%;
-    height: 1px;
-    -webkit-transform: scale(1, 0.5);
-            transform: scale(1, 0.5);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: scale(1, 0.5);
+  transform: scale(1, 0.5);
 }
 
 .bb_1px:after {
-    bottom: 0;
+  bottom: 0;
 }
 
 .bt_1px:after {
-    top: 0;
+  top: 0;
 }
 
 .bl_1px:after,
 .br_1px:after {
-    top: 0;
-    width: 1px;
-    height: 100%;
-    -webkit-transform: scale(0.5, 1);
-            transform: scale(0.5, 1);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scale(0.5, 1);
+  transform: scale(0.5, 1);
 }
-.bl_1px:after{
-    left: 0;
+.bl_1px:after {
+  left: 0;
 }
-.br_1px:after{
-    right: 0;
+.br_1px:after {
+  right: 0;
 }
 
 /* button basic */
-.u-btn, 
+.u-btn,
 .u-btn_il {
   padding: 0;
   text-align: center;
@@ -96,7 +94,6 @@
   &[no-bdr] {
     border-radius: 0;
   }
-  
 }
 
 /* dialog or window */
@@ -105,7 +102,6 @@
   @include fixed-mask();
   background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 .u-win,
 .u-dialog {

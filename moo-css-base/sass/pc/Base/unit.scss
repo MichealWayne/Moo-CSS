@@ -27,11 +27,11 @@
 }
 
 /* calculate width height padding */
-@mixin u-calculate-gwh($value,$interval:5) {
+@mixin u-calculate-gwh($value, $interval: 5) {
   $i: $interval;
   @while ($i < $value) {
     .u-p#{$i} {
-      padding: unit($i)
+      padding: unit($i);
     }
     .u-pr#{$i} {
       padding-right: unit($i);
@@ -51,7 +51,7 @@
     }
     .u-h#{$i} {
       display: block;
-      height: unit($i)
+      height: unit($i);
     }
     $i: $i + $interval;
   }

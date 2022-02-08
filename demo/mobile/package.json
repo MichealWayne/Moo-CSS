@@ -1,5 +1,5 @@
 {
-  "name": "MoocssDemo",
+  "name": "moo-css-demo",
   "version": "1.0.0",
   "task": "test",
   "author": "MichealWayne",
@@ -9,7 +9,7 @@
     "start": "webpack-dev-server -d --hot --env.dev",
     "dev": "npm run start",
     "build": "rimraf dist && webpack -p --env.config production",
-    "build:prod": "rimraf dist && webpack -p --env.config production --env.prod && node build/index"
+    "build:prod": "rimraf dist && webpack -p --env.config production --env.prod"
   },
   "license": "ISC",
   "devDependencies": {
@@ -29,12 +29,14 @@
     "glob": "^7.1.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "ijijin_builder": "^3.0.0",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
     "less-plugin-functions": "^1.0.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "mockjs": "^1.0.1-beta3",
     "moo-css-base": "^0.9.0",
+    "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
@@ -43,22 +45,15 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.7.0",
+    "vue-html-loader": "^1.2.4",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "file-loader": "^3.0.1",
-    "less-plugin-clean-css": "^1.5.1",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
-    "purify-css": "^1.2.5",
-    "purifycss-webpack": "^0.7.0",
-    "vue": "^2.6.10",
-    "vue-html-loader": "^1.2.4",
-    "vue-loader": "^15.7.0",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.6.10"
   },
   "babel": {
     "presets": [
@@ -80,6 +75,9 @@
     },
     "rules": {
       "array-callback-return": [
+        0
+      ],
+      "comma-dangle": [
         0
       ],
       "no-var": [

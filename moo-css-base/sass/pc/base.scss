@@ -4,34 +4,32 @@
     @github: https://github.com/MichealWayne/Moo-CSS
 \*------------------------------------*/
 
-
 /**
  * reset, flex, status, unit
  * export sizes
  */
- @import './Base/reset.scss';
- @import './Base/flex.scss';
- @import './Base/sizes.scss';
- @import './Base/status.scss';
- @import './Base/unit.scss';
- 
- /**
+@import './Base/reset.scss';
+@import './Base/flex.scss';
+@import './Base/sizes.scss';
+@import './Base/status.scss';
+@import './Base/unit.scss';
+
+/**
   * component, function
   * export mixins
   */
- @import './Component/component.scss';
- @import './Component/function.scss';
- @import './Component/mixins.scss';
- 
- /**
+@import './Component/component.scss';
+@import './Component/function.scss';
+@import './Component/mixins.scss';
+
+/**
   * grid
   */
- @import './Layout/grid.scss';
- 
- /**
+@import './Layout/grid.scss';
+
+/**
   * skins
   * export colors
   */
- @import './Skin/colors.scss';
- @import './Skin/skins.scss';
-
+@import './Skin/colors.scss';
+@import './Skin/skins.scss';
