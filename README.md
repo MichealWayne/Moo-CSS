@@ -1,6 +1,6 @@
 # Moo-CSS
 
-以样式自动化为目标，模块化面向对象的css写法规则策略Moo-CSS, 以及通用Base层样式库moo-css-base。[Moo-CSS文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English>>](./README_en.md)，[Moo-CSS生态（建设中）>>](https://github.com/MichealWayne/moo-css-plugins)
+以样式自动化为目标，模块化面向对象的css写法规则策略Moo-CSS, 以及通用Base层样式库[moo-css-base](./moo-css-base/)。[Moo-CSS文档地址>>](http://blog.michealwayne.cn/Moo-CSS/docs/), [English introduce>>](./README_en.md)，[Moo-CSS生态（建设中）>>](https://github.com/MichealWayne/moo-css-plugins)
 
 <p align="center">
   <a href="https://blog.michealwayne.cn/Moo-CSS/docs/" target="_blank">
@@ -14,9 +14,9 @@
 	- 维护性强
 	- 拓展性强
 - 缺点：
-	- 上手成本~
+	- 上手（理解）成本稍高~
 	
-
+主要目录结构：
 ```
 Moo-CSS
 ├─moo-css-base
@@ -39,17 +39,17 @@ Moo-CSS
 
 ### moo-css-base
 - [npm moo-css-base](https://www.npmjs.com/package/moo-css-base)
-- [moo-css-base vscode插件](./moo-css-plugin.vsix)
+- [moo-css-base vscode插件](./moo-css-plugin.test.vsix)
 - [moo-css-base 检索数据](https://github.com/MichealWayne/fe-tools/blob/master/datas/moo-css.json)
 - [moo-css fe-tools](https://github.com/MichealWayne/fe-tools)
-- moo-css-base demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html),[PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
- 移动端demo建议调成手机模式在开发者模式中查看。
+- moo-css-base demo url: [移动端](http://blog.michealwayne.cn/Moo-CSS/demo/mobile/dist/mobileIndex.html), [PC端](http://blog.michealwayne.cn/Moo-CSS/demo/pc/dist/index.html)。
+ 其中移动端demo建议调成手机模式在开发者模式中查看。
  
-### moo-css-transformer(test)
+### moo-css-transformer
 css代码/moo-css选择器的相互转换
 - [仓库地址](https://github.com/MichealWayne/moo-css-plugins/tree/master/moo-css-transformer)
 
-### moo-css-web(test)
+### moo-css-web
 虚拟dom -> 符合moo-css规范的web代码
 - [仓库地址](https://github.com/MichealWayne/moo-css-plugins/tree/master/moo-css-web)
 
@@ -109,9 +109,6 @@ function大部分由className实现，部分低权重样式由属性实现。
 其中，Base、Component、Skin、Layout中样式作用域为全局，Module层样式保持私有性。各层级保持独立性，满足SRP(单一功能原则)。
 
 详细介绍可见[文档-样式分层](http://blog.michealwayne.cn/Moo-CSS/docs/moocss/#样式分层)
-
-
-
 
 ### 1.3 Base层样式权重计算
 权重计算参考公式：
@@ -235,8 +232,8 @@ Element，**依赖于块的元素**。是用来标识一个元素的关键字也
 如
 ``` html
 <nav class="m-nav">
-    <a class="m-nav__item">nav 1</a>
-    <a class="m-nav__item">nav 2</a>
+  <a class="m-nav__item">nav 1</a>
+  <a class="m-nav__item">nav 2</a>
 </nav>
 ```
 
@@ -245,10 +242,10 @@ Element，**依赖于块的元素**。是用来标识一个元素的关键字也
 如
 ``` html
 <section class="g-pr">
-    <nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
-        <a class="m-nav__item">nav 1</a>
-        <a class="m-nav__item nav_type_selected">nav 2</a>
-    </nav>
+  <nav class="m-nav f-tc g-pa g-t50l100" u-size="big" s-bgc_yellow>
+    <a class="m-nav__item">nav 1</a>
+    <a class="m-nav__item nav_type_selected">nav 2</a>
+  </nav>
 </section>
 ```
 
@@ -261,11 +258,11 @@ Element，**依赖于块的元素**。是用来标识一个元素的关键字也
 .f-tc { text-align: center; }
 
 /* unit */
-[u-size="big"] { width: 500px; font-size: 30px }
-[u-size="small"] { width: 50px; font-size: 10px }
+[u-size="big"] { width: 500px; font-size: 30px; }
+[u-size="small"] { width: 50px; font-size: 10px; }
 
 /* skin */
-[s-bgc_yellow] { background-color: yellow }
+[s-bgc_yellow] { background-color: yellow; }
 
 /* module */
 .m-nav { /*...*/ }
@@ -282,25 +279,24 @@ ReactJS需要设置webpack配置文件中cssOptions参数的modules为true。
 如：
 ``` vue
 <template>
-    <section :class="$style.foot">
-        <p>
-            <img :class="$style.img" src="@/images/i-logo_b.png">
-        </p>
-        <p>@All right reserved | Design by <a href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
-    </section>
+  <section :class="$style.foot">
+    <p>
+      <img :class="$style.img" src="@/images/i-logo_b.png">
+    </p>
+    <p>@All right reserved | Design by <a href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
+  </section>
 </template>
 
 <style lang="less" module>
-    .foot {
-        line-height: 10vw;
-        word-break: keep-all;
-        white-space: nowrap;
-		
-		.img {
-			width: 10px;
-			height: 10px;
-		}
-    }
+.foot {
+  line-height: 10vw;
+  word-break: keep-all;
+  white-space: nowrap;
+  .img {
+    width: 10px;
+    height: 10px;
+  }
+}
 </style>
 
 ```
@@ -308,25 +304,24 @@ ReactJS需要设置webpack配置文件中cssOptions参数的modules为true。
 #### 结合其它层完成整个样式
 ``` vue
 <template>
-    <section :class="[$style.foot, 'f-tc']">
-        <p class="u-pt80">
-            <img :class="[$style.img, 'g-mb20']" src="@/images/i-logo_b.png">
-        </p>
-        <p class="g-fs22 u-pb100" s-cr_sub>@All right reserved | Design by <a class="f-unl" s-cr_blue href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
-    </section>
+  <section :class="[$style.foot, 'f-tc']">
+    <p class="u-pt80">
+      <img :class="[$style.img, 'g-mb20']" src="@/images/i-logo_b.png">
+    </p>
+    <p class="g-fs22 u-pb100" s-cr_sub>@All right reserved | Design by <a class="f-unl" s-cr_blue href="https://github.com/MichealWayne/">Micheal Wayne</a></p>
+  </section>
 </template>
 
 <style lang="less" module>
-    .foot {
-        line-height: 10vw;
-        word-break: keep-all;
-        white-space: nowrap;
-		
-		.img {
-			width: 10px;
-			height: 10px;
-		}
-    }
+.foot {
+  line-height: 10vw;
+  word-break: keep-all;
+  white-space: nowrap;		
+  .img {
+    width: 10px;
+    height: 10px;
+  }
+}
 </style>
 
 ```
@@ -334,32 +329,30 @@ ReactJS需要设置webpack配置文件中cssOptions参数的modules为true。
 #### react 例子
 ``` jsx
 import React, {Component} from 'react';
-import style from './index.scss'
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-export default class Footer extends Component {
-    render () {
-        return (
-            <footer className={classnames(style.foot, 'f-tc g-fs12 f-b_1px bt_1px g-mt60')} s-theme__foot="1">
-				<p class="u-pt80">
-					<img className={classnames(style.img, 'g-mb20')} src={require('@/images/i-logo_b.png')}>
-				</p>
-                MIT Licensed | Copyright © 2019-present MichealWayne
-            </footer>
-        )
-    }
+import style from './index.scss';
+
+export default function Footer () {
+  return (
+  <footer>
+    <p class="u-pt80">
+      <img className={classnames(style.img, 'g-mb20')} src={require('@/images/i-logo_b.png')}>
+    </p>
+    MIT Licensed | Copyright © 2019-present MichealWayne
+  </footer>
+  )
 }
 ```
 
 ``` scss
 // index.scss
 .foot {
-    padding: 40px;
-	
-	.img {
-	    width: 10px;
-		height: 10px;
-	}
+  padding: 40px;
+  .img {
+    width: 10px;
+    height: 10px;
+  }
 }
 ```
 
