@@ -1,16 +1,17 @@
 {
   "name": "moo-css-base",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Moo-CSS Base layer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Hello Moo-CSS~\" && exit 1"
+    "test": "echo \"Hello Moo-CSS~\" && exit 1",
+    "build:css": "lessc packages/less/pc/base.less output/pc.css && lessc packages/less/mobile/base.less output/mobile.css"
   },
   "keywords": [
     "Moo-CSS",
     "build",
     "FE",
-	  "css-base",
+    "css-base",
     "css",
     "less",
     "sass",
@@ -21,5 +22,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MichealWayne/moo-css.git"
+  },
+  "devDependencies": {
+    "stylelint": "^15.6.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3"
+  },
+  "dependencies": {
+    "less": "^4.1.3"
   }
 }

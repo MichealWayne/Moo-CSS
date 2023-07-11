@@ -1,7 +1,6 @@
 /*------------------------------------*\
     Moo-CSS 
     PC Base
-    @version: 0.9.5
     @github: https://github.com/MichealWayne/Moo-CSS
 \*------------------------------------*/
 /**
@@ -124,25 +123,25 @@ input {
   background-color: transparent;
 }
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   cursor: pointer;
   -webkit-appearance: button;
   *overflow: visible;
 }
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 /*------------------------------------*\
@@ -220,10 +219,10 @@ input[type="search"]::-webkit-search-decoration {
  * (1rem = 75px)
  */
 /* special */
-/*
-* PC
-* status
-*/
+/**
+ * PC
+ * status
+ */
 /* display none */
 .z-hide {
   display: none !important;
@@ -235,7 +234,7 @@ input[type="search"]::-webkit-search-decoration {
 .z-v_visible {
   visibility: visible;
 }
-/* opacity */
+/* opacity, filter for IE */
 .z-hide_0 {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -259,10 +258,10 @@ input[type="search"]::-webkit-search-decoration {
 .z-index_999 {
   z-index: 999;
 }
-/*
-* PC
-* unit
-*/
+/**
+ * PC
+ * unit
+ */
 /* width */
 .u-w {
   display: block;
@@ -698,46 +697,46 @@ input[type="search"]::-webkit-search-decoration {
 .u-p200 {
   padding: 200px;
 }
-.u-w150 {
+.u-w150rem {
   width: 150rem;
 }
-.u-w200 {
+.u-w200rem {
   width: 200rem;
 }
 /* height */
 .u-h {
   height: 100%;
 }
-.u-h150 {
+.u-h150rem {
   height: 150rem;
 }
-.u-h200 {
+.u-h200rem {
   height: 200rem;
 }
 /* padding */
-.u-p15 {
+.u-p15rem {
   padding: 15rem;
 }
 /* padding top */
-.u-pt15 {
+.u-pt15rem {
   padding-top: 15rem;
 }
 /* padding right */
 .u-pr4per {
   padding-right: 4%;
 }
-.u-pr15 {
+.u-pr15rem {
   padding-right: 15rem;
 }
 /* padding bottom */
-.u-pb15 {
+.u-pb15rem {
   padding-bottom: 15rem;
 }
 /* padding left */
 .u-pl4per {
   padding-left: 4%;
 }
-.u-pl15 {
+.u-pl15rem {
   padding-left: 15rem;
 }
 /**
@@ -801,67 +800,67 @@ input[type="search"]::-webkit-search-decoration {
   cursor: pointer;
   border-radius: 4px;
 }
-.u-btn[s-color="yellow"],
-.u-btn_il[s-color="yellow"] {
+.u-btn[s-color='yellow'],
+.u-btn_il[s-color='yellow'] {
   background-color: #f1ae3f;
   color: #fff;
 }
-.u-btn[s-color="yellow"]:hover,
-.u-btn_il[s-color="yellow"]:hover,
-.u-btn[s-color="yellow"]:focus,
-.u-btn_il[s-color="yellow"]:focus {
+.u-btn[s-color='yellow']:hover,
+.u-btn_il[s-color='yellow']:hover,
+.u-btn[s-color='yellow']:focus,
+.u-btn_il[s-color='yellow']:focus {
   background-color: #ec9a11;
 }
-.u-btn[s-color="orange"],
-.u-btn_il[s-color="orange"] {
+.u-btn[s-color='orange'],
+.u-btn_il[s-color='orange'] {
   background-color: #ff7010;
   color: #fff;
 }
-.u-btn[s-color="orange"]:hover,
-.u-btn_il[s-color="orange"]:hover,
-.u-btn[s-color="orange"]:focus,
-.u-btn_il[s-color="orange"]:focus {
+.u-btn[s-color='orange']:hover,
+.u-btn_il[s-color='orange']:hover,
+.u-btn[s-color='orange']:focus,
+.u-btn_il[s-color='orange']:focus {
   background-color: #dc5800;
 }
-.u-btn[s-color="red"],
-.u-btn_il[s-color="red"] {
+.u-btn[s-color='red'],
+.u-btn_il[s-color='red'] {
   background-color: #cf0e0f;
   color: #fff;
 }
-.u-btn[s-color="red"]:hover,
-.u-btn_il[s-color="red"]:hover,
-.u-btn[s-color="red"]:focus,
-.u-btn_il[s-color="red"]:focus {
+.u-btn[s-color='red']:hover,
+.u-btn_il[s-color='red']:hover,
+.u-btn[s-color='red']:focus,
+.u-btn_il[s-color='red']:focus {
   background-color: #9f0b0c;
 }
-.u-btn[s-color="gray"],
-.u-btn_il[s-color="gray"] {
+.u-btn[s-color='gray'],
+.u-btn_il[s-color='gray'] {
   background-color: #ccc;
   color: #fff;
 }
-.u-btn[s-color="gray"]:hover,
-.u-btn_il[s-color="gray"]:hover,
-.u-btn[s-color="gray"]:focus,
-.u-btn_il[s-color="gray"]:focus {
+.u-btn[s-color='gray']:hover,
+.u-btn_il[s-color='gray']:hover,
+.u-btn[s-color='gray']:focus,
+.u-btn_il[s-color='gray']:focus {
   background-color: #b3b3b3;
 }
-.u-btn[s-color="bd_gray"],
-.u-btn_il[s-color="bd_gray"] {
+.u-btn[s-color='bd_gray'],
+.u-btn_il[s-color='bd_gray'] {
   border: thin solid #999;
   color: #999;
 }
-.u-btn[s-color="bd_white"],
-.u-btn_il[s-color="bd_white"] {
+.u-btn[s-color='bd_white'],
+.u-btn_il[s-color='bd_white'] {
   border: thin solid #fff;
   color: #fff;
 }
-.u-btn[s-color="bd_red"],
-.u-btn_il[s-color="bd_red"] {
+.u-btn[s-color='bd_red'],
+.u-btn_il[s-color='bd_red'] {
   border: thin solid #cf0e0f;
   color: #cf0e0f;
 }
-.u-btn[s-color="bd_yellow"],
-.u-btn_il[s-color="bd_yellow"] {
+.u-btn[s-color='bd_yellow'],
+.u-btn_il[s-color='bd_yellow'] {
   border: thin solid #f1ae3f;
   color: #f1ae3f;
 }
@@ -874,18 +873,18 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
 }
-.u-btn[s-size="small"],
-.u-btn_il[s-size="small"] {
+.u-btn[s-size='small'],
+.u-btn_il[s-size='small'] {
   line-height: 26px;
   font-size: 12px;
 }
-.u-btn[s-size="medium"],
-.u-btn_il[s-size="medium"] {
+.u-btn[s-size='medium'],
+.u-btn_il[s-size='medium'] {
   line-height: 42px;
   font-size: 16px;
 }
-.u-btn[s-size="big"],
-.u-btn_il[s-size="big"] {
+.u-btn[s-size='big'],
+.u-btn_il[s-size='big'] {
   line-height: 50px;
   font-size: 17px;
 }
@@ -1027,10 +1026,10 @@ input[type="search"]::-webkit-search-decoration {
 }
 /* font family */
 .f-song_font {
-  font-family: "宋体";
+  font-family: '宋体';
 }
 .f-yahei_font {
-  font-family: "Microsoft Yahei";
+  font-family: 'Microsoft Yahei';
 }
 /* point event */
 .f-event_none {
@@ -1038,7 +1037,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 /* inline warp */
 .f-inline_wrap::after {
-  content: "\A";
+  content: '\A';
   white-space: pre;
 }
 /*------------------------------------*\
@@ -1355,56 +1354,56 @@ input[type="search"]::-webkit-search-decoration {
 \*------------------------------------*/
 /* font color */
 [s-cr_red],
-[s-cr="red"] {
+[s-cr='red'] {
   color: #fe5d4e;
 }
 [s-cr_green],
-[s-cr="green"] {
+[s-cr='green'] {
   color: #009801;
 }
 [s-cr_blue],
-[s-cr="blue"] {
+[s-cr='blue'] {
   color: #01a2fc;
 }
 [s-ft_base],
-[s-cr="base"] {
+[s-cr='base'] {
   color: #323232;
 }
 [s-ft_base_],
-[s-cr="base_"] {
+[s-cr='base_'] {
   color: #333;
 }
 [s-ft_sub],
-[s-cr="sub"] {
+[s-cr='sub'] {
   color: #666;
 }
 [s-ft_sub_],
 [s-cr_gray],
-[s-cr="gray"] {
+[s-cr='gray'] {
   color: #999;
 }
 [s-cr_white],
-[s-cr="white"] {
+[s-cr='white'] {
   color: #fff;
 }
 /* background color */
 [s-bgc_white],
-[s-bgc="white"] {
+[s-bgc='white'] {
   background-color: #fff;
 }
 [s-bgc_red],
-[s-bgc="red"] {
+[s-bgc='red'] {
   background-color: #fe5d4e;
 }
 [s-bgc_green],
-[s-bgc="green"] {
+[s-bgc='green'] {
   background-color: #009801;
 }
 [s-bgc_blue],
-[s-bgc="blue"] {
+[s-bgc='blue'] {
   background-color: #01a2fc;
 }
 [s-bgc_gray],
-[s-bgc="gray"] {
+[s-bgc='gray'] {
   background-color: #999;
 }
